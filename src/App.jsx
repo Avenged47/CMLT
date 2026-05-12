@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import trainRaw from "../data/train.json?raw";
-import devRaw from "../data/dev.json?raw";
-import testRaw from "../data/test.json?raw";
 import "./App.css";
 
 const MAX_QUESTIONS = 25;
@@ -9,10 +6,10 @@ const QUIZ_DURATION_SECONDS = 30 * 60;
 const PREVIEW_LIMIT = 220;
 const PASS_MARK = 80;
 const OPTION_LABELS = ["A", "B", "C", "D"];
-const DATASETS = {
-  train: trainRaw,
-  dev: devRaw,
-  test: testRaw,
+const DATASET_FILES = {
+  train: "/data/train.json",
+  dev: "/data/dev.json",
+  test: "/data/test.json",
 };
 
 const trimText = (value) =>
@@ -42,10 +39,19 @@ const parseJsonLines = (rawText) => {
   return lines.map((line, index) => {
     try {
       return JSON.parse(line);
-    } catch (error) {
+    } catch {
       throw new Error(`Invalid JSON on line ${index + 1}`);
     }
   });
+};
+
+const fetchDataset = async (name) => {
+  const url = DATASET_FILES[name];
+  if (!url) throw new Error(`Unknown dataset: ${name}`);
+  const response = await fetch(url);
+  if (!response.ok)
+    throw new Error(`Could not load ${name}.json (${response.status})`);
+  return response.text();
 };
 
 const createQuizData = (rows) => {
@@ -106,11 +112,7 @@ function App() {
       setLoadError("");
 
       try {
-        const rawData = DATASETS[activeSet];
-        if (!rawData) {
-          throw new Error(`Unknown dataset: ${activeSet}`);
-        }
-
+        const rawData = await fetchDataset(activeSet);
         const rows = parseJsonLines(rawData);
         const generatedQuiz = createQuizData(rows);
         if (generatedQuiz.length === 0) {
