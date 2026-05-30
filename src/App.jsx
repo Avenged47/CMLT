@@ -686,7 +686,7 @@ function App() {
           <p className="result-note" style={{ marginTop: 10 }}>
             Before clicking Start Exam, please read all instructions carefully.
             If there is any confusion, ask your Exam provider Mr. Anush
-            Dhungana.
+            Dhungana🫡😉😉.
           </p>
         </section>
       </main>
