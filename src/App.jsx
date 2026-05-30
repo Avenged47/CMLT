@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const MAX_QUESTIONS = 25;
-const QUIZ_DURATION_SECONDS = 30 * 60;
+const QUIZ_DURATION_SECONDS = 2 * 60 * 60;
 const PREVIEW_LIMIT = 220;
-const PASS_MARK = 80;
+const PASS_MARK = 70;
 const OPTION_LABELS = ["A", "B", "C", "D"];
 const DATASET_FILES = {
-  train: "/data/train.json",
-  dev: "/data/dev.json",
-  test: "/data/test.json",
+  cmltPreparation: "/data/cmlt_preparation.json",
 };
+
+const ACTIVE_SET = "cmltPreparation";
 
 const trimText = (value) =>
   String(value ?? "")
@@ -25,15 +24,6 @@ const truncateText = (value, maxLength = PREVIEW_LIMIT) => {
   return `${value.slice(0, maxLength - 1)}...`;
 };
 
-const shuffle = (items) => {
-  const output = [...items];
-  for (let index = output.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [output[index], output[randomIndex]] = [output[randomIndex], output[index]];
-  }
-  return output;
-};
-
 const parseJsonLines = (rawText) => {
   const lines = rawText.split(/\r?\n/).filter((line) => line.trim());
   return lines.map((line, index) => {
@@ -43,6 +33,56 @@ const parseJsonLines = (rawText) => {
       throw new Error(`Invalid JSON on line ${index + 1}`);
     }
   });
+};
+
+const parsePreparationRows = (rawText) => {
+  let content = String(rawText ?? "").trim();
+
+  try {
+    const parsed = JSON.parse(content);
+    if (
+      parsed &&
+      typeof parsed === "object" &&
+      !Array.isArray(parsed) &&
+      Object.keys(parsed).length === 1
+    ) {
+      const [singleKey] = Object.keys(parsed);
+      content = singleKey;
+    }
+  } catch {
+    // Not valid JSON object; parse as plain text.
+  }
+
+  content = content.replace(/^\uFEFF/, "");
+
+  const pattern =
+    /(\d+)\.\s*([\s\S]*?)\nA\.\s*([\s\S]*?)\nB\.\s*([\s\S]*?)\nC\.\s*([\s\S]*?)\nD\.\s*([\s\S]*?)\nAnswer:\s*([A-D])\./g;
+
+  const rows = [];
+  let match;
+
+  while ((match = pattern.exec(content)) !== null) {
+    const [, , question, opa, opb, opc, opd, answerLetter] = match;
+    rows.push({
+      question: trimText(question),
+      opa: trimText(opa),
+      opb: trimText(opb),
+      opc: trimText(opc),
+      opd: trimText(opd),
+      cop: OPTION_LABELS.indexOf(answerLetter) + 1,
+      subject_name: "cmlt_preparation",
+    });
+  }
+
+  return rows;
+};
+
+const parseDatasetRows = (rawText, setName) => {
+  if (setName === "cmltPreparation") {
+    return parsePreparationRows(rawText);
+  }
+
+  return parseJsonLines(rawText);
 };
 
 const fetchDataset = async (name) => {
@@ -76,7 +116,7 @@ const createQuizData = (rows) => {
       return hasValidQuestion && hasFourOptions && hasValidAnswer;
     });
 
-  return shuffle(cleanedRows).slice(0, MAX_QUESTIONS);
+  return cleanedRows;
 };
 
 const formatCategory = (value) => {
@@ -91,16 +131,25 @@ const formatCategory = (value) => {
     .join(" ");
 };
 
+const getPaletteRangeClass = (questionNumber) => {
+  if (questionNumber <= 20) return "range-1-20";
+  if (questionNumber <= 40) return "range-21-40";
+  if (questionNumber <= 60) return "range-41-60";
+  if (questionNumber <= 70) return "range-61-70";
+  if (questionNumber <= 80) return "range-71-80";
+  if (questionNumber <= 85) return "range-81-85";
+  if (questionNumber <= 90) return "range-86-90";
+  if (questionNumber <= 95) return "range-91-95";
+  return "range-96-100";
+};
+
 function App() {
-  const [activeSet, setActiveSet] = useState("train");
   const [quizData, setQuizData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
   const [userAnswers, setUserAnswers] = useState([]);
   const [timeLeft, setTimeLeft] = useState(QUIZ_DURATION_SECONDS);
 
@@ -112,20 +161,18 @@ function App() {
       setLoadError("");
 
       try {
-        const rawData = await fetchDataset(activeSet);
-        const rows = parseJsonLines(rawData);
+        const rawData = await fetchDataset(ACTIVE_SET);
+        const rows = parseDatasetRows(rawData, ACTIVE_SET);
         const generatedQuiz = createQuizData(rows);
         if (generatedQuiz.length === 0) {
-          throw new Error(`No usable questions found in ${activeSet}.json`);
+          throw new Error("No usable questions found in cmlt_preparation.json");
         }
 
         if (!isCancelled) {
           setQuizData(generatedQuiz);
           setCurrentQuestionIndex(0);
           setSelectedOption(null);
-          setScore(0);
           setIsSubmitted(false);
-          setIsChecked(false);
           setUserAnswers([]);
           setTimeLeft(QUIZ_DURATION_SECONDS);
         }
@@ -147,7 +194,7 @@ function App() {
     return () => {
       isCancelled = true;
     };
-  }, [activeSet]);
+  }, []);
 
   useEffect(() => {
     if (isLoading || isSubmitted || quizData.length === 0) {
@@ -170,12 +217,16 @@ function App() {
     };
   }, [isLoading, isSubmitted, quizData.length]);
 
+  useEffect(() => {
+    setSelectedOption(userAnswers[currentQuestionIndex] ?? null);
+  }, [currentQuestionIndex, userAnswers]);
+
   if (isLoading) {
     return (
       <main className="app-shell">
         <section className="quiz-card result-card">
           <p className="eyebrow">Loading</p>
-          <h1>Preparing questions from {activeSet}.json...</h1>
+          <h1>Preparing questions from cmlt_preparation.json...</h1>
         </section>
       </main>
     );
@@ -195,14 +246,28 @@ function App() {
 
   const currentQuestion = quizData[currentQuestionIndex];
   const isFinished = currentQuestionIndex >= quizData.length;
-  const currentAnswer = userAnswers[currentQuestionIndex];
 
-  const answeredCount = userAnswers.filter(Boolean).length;
+  const answeredCount = userAnswers.filter(
+    (answer) => answer !== null && answer !== undefined,
+  ).length;
+  const unansweredCount = quizData.length - answeredCount;
   const progressPercent = Math.round((answeredCount / quizData.length) * 100);
 
+  const evaluatedAnswers = quizData.map((question, index) => {
+    const selected = userAnswers[index];
+    return {
+      selectedOption: selected,
+      isCorrect: selected === question.answerIndex,
+      category: question.category,
+      isAnswered: selected !== null && selected !== undefined,
+    };
+  });
+
+  const score = evaluatedAnswers.filter((item) => item.isCorrect).length;
+
   const summary = {};
-  userAnswers.forEach((item) => {
-    if (!item) {
+  evaluatedAnswers.forEach((item) => {
+    if (!item.isAnswered) {
       return;
     }
 
@@ -235,39 +300,16 @@ function App() {
     secondsLeft,
   ).padStart(2, "0")}`;
 
-  const handleCheckAnswer = () => {
-    if (selectedOption === null) {
-      return;
-    }
-
-    if (currentAnswer) {
-      setIsChecked(true);
-      return;
-    }
-
-    const isCorrect = selectedOption === currentQuestion.answerIndex;
-    if (isCorrect) {
-      setScore((prevScore) => prevScore + 1);
-    }
-
+  const handleSelectOption = (value) => {
+    setSelectedOption(value);
     setUserAnswers((previousAnswers) => {
       const nextAnswers = [...previousAnswers];
-      nextAnswers[currentQuestionIndex] = {
-        selectedOption,
-        isCorrect,
-        category: currentQuestion.category,
-      };
+      nextAnswers[currentQuestionIndex] = value;
       return nextAnswers;
     });
-
-    setIsChecked(true);
   };
 
   const handleNext = () => {
-    if (!isChecked) {
-      return;
-    }
-
     const isLastQuestion = currentQuestionIndex === quizData.length - 1;
     if (isLastQuestion) {
       setIsSubmitted(true);
@@ -275,17 +317,17 @@ function App() {
     }
 
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    setSelectedOption(null);
-    setIsChecked(false);
+  };
+
+  const handleQuestionJump = (index) => {
+    setCurrentQuestionIndex(index);
   };
 
   const restartQuiz = () => {
-    setQuizData((previousQuizData) => shuffle(previousQuizData));
+    setQuizData((previousQuizData) => [...previousQuizData]);
     setCurrentQuestionIndex(0);
     setSelectedOption(null);
-    setScore(0);
     setIsSubmitted(false);
-    setIsChecked(false);
     setUserAnswers([]);
     setTimeLeft(QUIZ_DURATION_SECONDS);
   };
@@ -293,12 +335,29 @@ function App() {
   if (isSubmitted || isFinished) {
     const percentage = Math.round((score / quizData.length) * 100);
     const isPass = percentage >= PASS_MARK;
+    const reviewedQuestions = quizData.map((question, index) => {
+      const selectedOption = userAnswers[index];
+      const isAnswered =
+        selectedOption !== null && selectedOption !== undefined;
+      const isCorrect = isAnswered && selectedOption === question.answerIndex;
+
+      return {
+        index,
+        question: question.question,
+        isAnswered,
+        isCorrect,
+        selectedText: isAnswered
+          ? question.options[selectedOption]
+          : "Not answered",
+        correctText: question.options[question.answerIndex],
+      };
+    });
 
     return (
       <main className="app-shell">
         <section className="quiz-card result-card">
           <p className="eyebrow">License Preparation Result</p>
-          <h1>{isPass ? "Status: Pass" : "Status: Keep Practicing"}</h1>
+          <h1>{isPass ? 'Status: "Pass"' : 'Status: "Failed"'}</h1>
           <p>
             You scored <strong>{score}</strong> out of{" "}
             <strong>{quizData.length}</strong> ({percentage}%).
@@ -316,6 +375,43 @@ function App() {
             ))}
           </div>
 
+          <div className="review-list">
+            {reviewedQuestions.map((item) => (
+              <div
+                key={`review-${item.index + 1}`}
+                className={`review-item ${item.isCorrect ? "is-correct" : item.isAnswered ? "is-wrong" : "is-unanswered"}`}
+              >
+                <div className="review-head">
+                  <strong>Question {item.index + 1}</strong>
+                  <span
+                    className={`review-status ${item.isCorrect ? "is-correct" : item.isAnswered ? "is-wrong" : "is-unanswered"}`}
+                  >
+                    {item.isCorrect
+                      ? "Correct"
+                      : item.isAnswered
+                        ? "Wrong"
+                        : "Not Answered"}
+                  </span>
+                </div>
+                <p className="review-question">{item.question}</p>
+                <p>
+                  <strong>Your Answer:</strong>{" "}
+                  <span
+                    className={`review-answer-text ${item.isCorrect ? "is-correct" : item.isAnswered ? "is-wrong" : "is-unanswered"}`}
+                  >
+                    {item.selectedText}
+                  </span>
+                </p>
+                <p>
+                  <strong>Correct Answer:</strong>{" "}
+                  <span className="review-correct-text">
+                    {item.correctText}
+                  </span>
+                </p>
+              </div>
+            ))}
+          </div>
+
           <button type="button" className="primary-btn" onClick={restartQuiz}>
             Start New Practice Set
           </button>
@@ -326,116 +422,93 @@ function App() {
 
   return (
     <main className="app-shell">
-      <section className="quiz-card">
-        <div className="top-meta">
-          <p className="eyebrow">License Prep Practice</p>
-          <p className="score-chip">Score: {score}</p>
-        </div>
-
-        <div className="top-meta" style={{ marginTop: 8 }}>
-          <p className="eyebrow">Timer</p>
-          <p className="score-chip">{timerLabel}</p>
-        </div>
-
-        <div className="actions" style={{ marginBottom: 12 }}>
-          <p className="progress">Dataset</p>
-          <select
-            value={activeSet}
-            onChange={(event) => setActiveSet(event.target.value)}
-            className="primary-btn"
-            style={{ paddingRight: 32 }}
-            aria-label="Select dataset"
-          >
-            <option value="train">Train</option>
-            <option value="dev">Dev</option>
-            <option value="test">Test</option>
-          </select>
-        </div>
-
-        <div className="progress-wrap" aria-hidden="true">
-          <div className="progress-track">
-            <div
-              className="progress-bar"
-              style={{ width: `${progressPercent}%` }}
-            ></div>
+      <div className="quiz-layout">
+        <section className="quiz-card quiz-main">
+          <div className="top-meta">
+            <p className="eyebrow">License Prep Practice</p>
+            <p className="score-chip">
+              Answered: {answeredCount}/{quizData.length}
+            </p>
           </div>
-          <span className="progress-value">{progressPercent}% complete</span>
-        </div>
 
-        <p className="category-badge">
-          {formatCategory(currentQuestion.category)}
-        </p>
-        <h1>{currentQuestion.question}</h1>
-        <p className="hint">
-          Loaded from {activeSet}.json in your data folder.
-        </p>
+          <div className="top-meta" style={{ marginTop: 8 }}>
+            <p className="eyebrow">Timer</p>
+            <p className="score-chip">{timerLabel}</p>
+          </div>
 
-        <div
-          className="option-list"
-          role="radiogroup"
-          aria-label="Answer choices"
-        >
-          {currentQuestion.options.map((option, index) => (
-            <label key={`${option}-${index}`} className="option-item">
-              <input
-                type="radio"
-                name="mcq-option"
-                value={index}
-                checked={selectedOption === index}
-                onChange={() => setSelectedOption(index)}
-                disabled={isChecked}
-              />
-              <span className="option-label">{OPTION_LABELS[index]}</span>
-              <span title={option}>{truncateText(option)}</span>
-            </label>
-          ))}
-        </div>
+          <div className="progress-wrap" aria-hidden="true">
+            <div className="progress-track">
+              <div
+                className="progress-bar"
+                style={{ width: `${progressPercent}%` }}
+              ></div>
+            </div>
+            <span className="progress-value">{progressPercent}% complete</span>
+          </div>
 
-        {isChecked && (
+          <p className="category-badge">
+            {formatCategory(currentQuestion.category)}
+          </p>
+          <h1>{currentQuestion.question}</h1>
+
           <div
-            className={
-              currentAnswer?.isCorrect
-                ? "feedback feedback-correct"
-                : "feedback feedback-incorrect"
-            }
+            className="option-list"
+            role="radiogroup"
+            aria-label="Answer choices"
           >
-            <strong>
-              {currentAnswer?.isCorrect ? "Correct" : "Incorrect"}
-            </strong>
-            {!currentAnswer?.isCorrect && (
-              <p>
-                Correct answer:{" "}
-                <span
-                  title={currentQuestion.options[currentQuestion.answerIndex]}
-                >
-                  {truncateText(
-                    currentQuestion.options[currentQuestion.answerIndex],
-                    260,
-                  )}
-                </span>
-              </p>
-            )}
+            {currentQuestion.options.map((option, index) => (
+              <label key={`${option}-${index}`} className="option-item">
+                <input
+                  type="radio"
+                  name="mcq-option"
+                  value={index}
+                  checked={selectedOption === index}
+                  onChange={() => handleSelectOption(index)}
+                />
+                <span className="option-label">{OPTION_LABELS[index]}</span>
+                <span title={option}>{truncateText(option)}</span>
+              </label>
+            ))}
           </div>
-        )}
 
-        <div className="actions">
-          <p className="progress">{progressLabel}</p>
-          {!isChecked ? (
-            <button
-              type="button"
-              className="primary-btn"
-              onClick={handleCheckAnswer}
-              disabled={selectedOption === null}
-            >
-              Check Answer
-            </button>
-          ) : (
+          <div className="actions">
+            <p className="progress">{progressLabel}</p>
             <button type="button" className="primary-btn" onClick={handleNext}>
-              {currentQuestionIndex === quizData.length - 1 ? "Submit" : "Next"}
+              {currentQuestionIndex === quizData.length - 1
+                ? "Submit Exam"
+                : "Next"}
             </button>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+
+        <aside className="quiz-card palette-card" aria-label="Question status">
+          <p className="eyebrow">Question Panel</p>
+          <div className="palette-summary">
+            <p className="score-chip">Answered: {answeredCount}</p>
+            <p className="score-chip palette-left">Left: {unansweredCount}</p>
+          </div>
+          <div className="question-palette">
+            {quizData.map((_, index) => {
+              const questionNumber = index + 1;
+              const hasAnswer =
+                userAnswers[index] !== null && userAnswers[index] !== undefined;
+              const isCurrent = index === currentQuestionIndex;
+              const rangeClass = getPaletteRangeClass(questionNumber);
+              return (
+                <button
+                  type="button"
+                  key={`q-${questionNumber}`}
+                  className={`palette-btn ${rangeClass} ${hasAnswer ? "is-answered" : ""} ${isCurrent ? "is-current" : ""}`}
+                  onClick={() => handleQuestionJump(index)}
+                  aria-label={`Go to question ${questionNumber}`}
+                >
+                  {questionNumber}
+                </button>
+              );
+            })}
+          </div>
+        </aside>
+      </div>
     </main>
   );
 }
