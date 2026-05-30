@@ -45,6 +45,12 @@
   border-color: #dec88f;
 }
 
+.palette-review {
+  color: #5b3e00;
+  background: #ffe7b7;
+  border-color: #e3bb68;
+}
+
 .question-palette {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -77,6 +83,10 @@
 .palette-btn.is-current {
   outline: 2px solid #1f6d52;
   outline-offset: 1px;
+}
+
+.palette-btn.is-review {
+  box-shadow: inset 0 0 0 2px #c08000;
 }
 
 .palette-btn.range-1-20 {
@@ -263,6 +273,13 @@
   gap: 12px;
 }
 
+.actions-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .progress {
   margin: 0;
   color: #6a5e4a;
@@ -295,6 +312,22 @@ select.primary-btn {
   cursor: not-allowed;
 }
 
+.secondary-btn {
+  background: #6b7280;
+}
+
+.secondary-btn:hover:enabled {
+  background: #4b5563;
+}
+
+.review-btn {
+  background: #a36500;
+}
+
+.review-btn:hover:enabled {
+  background: #7f4f00;
+}
+
 .result-card {
   text-align: center;
 }
@@ -306,6 +339,73 @@ select.primary-btn {
 .result-note {
   color: #5c503c;
   font-size: 14px;
+}
+
+.exam-guide {
+  margin: 10px 0 16px;
+  padding: 14px;
+  border: 1px solid #d8ca9c;
+  border-radius: 12px;
+  background: #fffaf0;
+  text-align: left;
+}
+
+.exam-guide h2 {
+  margin: 10px 0 8px;
+  font-size: 1rem;
+  color: #4c3a15;
+}
+
+.exam-guide p {
+  margin: 0 0 8px;
+}
+
+.exam-guide ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.exam-guide li {
+  margin-bottom: 6px;
+  color: #4f4737;
+}
+
+.distribution-wrap {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.distribution-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d8ca9c;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fffdf7;
+}
+
+.distribution-table th,
+.distribution-table td {
+  border: 1px solid #e2d6b0;
+  padding: 8px 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.distribution-table th {
+  background: #f2e5be;
+  color: #4c3a15;
+}
+
+.distribution-table td:first-child,
+.distribution-table td:last-child {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.distribution-total-row td {
+  font-weight: 800;
+  background: #f8f1db;
 }
 
 .summary-grid {
@@ -425,6 +525,36 @@ select.primary-btn {
   font-weight: 700;
 }
 
+.submit-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 10, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.submit-dialog-card {
+  width: min(520px, 100%);
+  background: #fffdf4;
+  border: 1px solid #d8ca9c;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 18px 40px rgba(44, 38, 25, 0.2);
+  text-align: center;
+}
+
+.submit-dialog-card h2 {
+  margin: 4px 0 12px;
+  color: #3f3216;
+}
+
+.submit-dialog-card p {
+  margin: 0 0 8px;
+}
+
 @media (max-width: 900px) {
   .quiz-layout {
     grid-template-columns: 1fr;
@@ -479,6 +609,10 @@ select.primary-btn {
     width: 100%;
   }
 
+  .actions-group {
+    width: 100%;
+  }
+
   h1 {
     font-size: 1.2rem;
     line-height: 1.35;
@@ -502,6 +636,16 @@ select.primary-btn {
   .review-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .distribution-table th,
+  .distribution-table td {
+    font-size: 13px;
+    padding: 7px 8px;
+  }
+
+  .submit-dialog-card {
+    padding: 14px;
   }
 }
 

@@ -10,6 +10,22 @@ const DATASET_FILES = {
 };
 
 const ACTIVE_SET = "cmltPreparation";
+const EXAM_STATE_STORAGE_KEY = "cmlt_exam_state_v1";
+const SUBJECT_MARK_DISTRIBUTION = [
+  { sn: "1.", subject: "Clinical Biochemistry", marks: "20%" },
+  { sn: "2.", subject: "Clinical Haematology", marks: "20%" },
+  {
+    sn: "3.",
+    subject: "Clinical Microbiology and Immunology",
+    marks: "20%",
+  },
+  { sn: "4.", subject: "Histo/Cytopatological Techniques", marks: "10%" },
+  { sn: "5.", subject: "Anatomy and Physiology", marks: "10%" },
+  { sn: "6.", subject: "Clinical Parasitology", marks: "5%" },
+  { sn: "7.", subject: "Instrumentation and Automation", marks: "5%" },
+  { sn: "8.", subject: "Blood Banking", marks: "5%" },
+  { sn: "9.", subject: "Pathology", marks: "5%" },
+];
 
 const trimText = (value) =>
   String(value ?? "")
@@ -143,15 +159,48 @@ const getPaletteRangeClass = (questionNumber) => {
   return "range-96-100";
 };
 
+const loadSavedExamState = () => {
+  try {
+    const rawValue = window.localStorage.getItem(EXAM_STATE_STORAGE_KEY);
+    if (!rawValue) {
+      return null;
+    }
+    return JSON.parse(rawValue);
+  } catch {
+    return null;
+  }
+};
+
+const saveExamState = (state) => {
+  try {
+    window.localStorage.setItem(EXAM_STATE_STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // Ignore storage write failures.
+  }
+};
+
+const clearSavedExamState = () => {
+  try {
+    window.localStorage.removeItem(EXAM_STATE_STORAGE_KEY);
+  } catch {
+    // Ignore storage cleanup failures.
+  }
+};
+
 function App() {
   const [quizData, setQuizData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [userAnswers, setUserAnswers] = useState([]);
+  const [markedForReview, setMarkedForReview] = useState([]);
   const [timeLeft, setTimeLeft] = useState(QUIZ_DURATION_SECONDS);
+  const [examEndTime, setExamEndTime] = useState(null);
+  const [isSubmitDialogOpen, setIsSubmitDialogOpen] = useState(false);
+  const [pendingMarkedNumbers, setPendingMarkedNumbers] = useState([]);
 
   useEffect(() => {
     let isCancelled = false;
@@ -169,12 +218,73 @@ function App() {
         }
 
         if (!isCancelled) {
+          const savedState = loadSavedExamState();
+          const hasValidSavedState =
+            savedState &&
+            savedState.activeSet === ACTIVE_SET &&
+            savedState.totalQuestions === generatedQuiz.length &&
+            !savedState.isSubmitted;
+
+          const nextAnswers = hasValidSavedState
+            ? generatedQuiz.map((_, index) => {
+                const answer = savedState.userAnswers?.[index];
+                if (answer === null || answer === undefined) {
+                  return null;
+                }
+                return Number.isInteger(answer) && answer >= 0 && answer < 4
+                  ? answer
+                  : null;
+              })
+            : [];
+
+          const nextReviewFlags = hasValidSavedState
+            ? generatedQuiz.map((_, index) =>
+                Boolean(savedState.markedForReview?.[index]),
+              )
+            : [];
+
+          const nextQuestionIndex = hasValidSavedState
+            ? Math.min(
+                Math.max(0, Number(savedState.currentQuestionIndex) || 0),
+                generatedQuiz.length - 1,
+              )
+            : 0;
+
+          const now = Date.now();
+          let nextEndTime = null;
+          let nextTimeLeft = QUIZ_DURATION_SECONDS;
+          let nextIsSubmitted = false;
+          let nextHasStarted = false;
+
+          if (hasValidSavedState) {
+            nextHasStarted = true;
+
+            if (typeof savedState.examEndTime === "number") {
+              nextEndTime = savedState.examEndTime;
+              nextTimeLeft = Math.max(
+                0,
+                Math.floor((savedState.examEndTime - now) / 1000),
+              );
+            } else if (typeof savedState.timeLeft === "number") {
+              nextTimeLeft = Math.max(0, Math.floor(savedState.timeLeft));
+              nextEndTime = now + nextTimeLeft * 1000;
+            }
+
+            if (nextTimeLeft === 0) {
+              nextIsSubmitted = true;
+              clearSavedExamState();
+            }
+          }
+
           setQuizData(generatedQuiz);
-          setCurrentQuestionIndex(0);
+          setHasStarted(nextHasStarted);
+          setCurrentQuestionIndex(nextQuestionIndex);
           setSelectedOption(null);
-          setIsSubmitted(false);
-          setUserAnswers([]);
-          setTimeLeft(QUIZ_DURATION_SECONDS);
+          setIsSubmitted(nextIsSubmitted);
+          setUserAnswers(nextAnswers);
+          setMarkedForReview(nextReviewFlags);
+          setTimeLeft(nextTimeLeft);
+          setExamEndTime(nextEndTime);
         }
       } catch (error) {
         if (!isCancelled) {
@@ -197,25 +307,71 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (isLoading || isSubmitted || quizData.length === 0) {
+    if (
+      isLoading ||
+      !hasStarted ||
+      isSubmitted ||
+      quizData.length === 0 ||
+      !examEndTime
+    ) {
       return undefined;
     }
 
+    const tickTimer = () => {
+      const remainingSeconds = Math.max(
+        0,
+        Math.floor((examEndTime - Date.now()) / 1000),
+      );
+      setTimeLeft(remainingSeconds);
+
+      if (remainingSeconds === 0) {
+        setIsSubmitted(true);
+      }
+    };
+
+    tickTimer();
+
     const timerId = window.setInterval(() => {
-      setTimeLeft((previous) => {
-        if (previous <= 1) {
-          window.clearInterval(timerId);
-          setIsSubmitted(true);
-          return 0;
-        }
-        return previous - 1;
-      });
+      tickTimer();
     }, 1000);
 
     return () => {
       window.clearInterval(timerId);
     };
-  }, [isLoading, isSubmitted, quizData.length]);
+  }, [isLoading, hasStarted, isSubmitted, quizData.length, examEndTime]);
+
+  useEffect(() => {
+    if (isLoading || !hasStarted || isSubmitted || !examEndTime) {
+      return;
+    }
+
+    saveExamState({
+      activeSet: ACTIVE_SET,
+      totalQuestions: quizData.length,
+      currentQuestionIndex,
+      userAnswers,
+      markedForReview,
+      isSubmitted,
+      examEndTime,
+      timeLeft,
+    });
+  }, [
+    isLoading,
+    hasStarted,
+    isSubmitted,
+    examEndTime,
+    quizData.length,
+    currentQuestionIndex,
+    userAnswers,
+    markedForReview,
+    timeLeft,
+  ]);
+
+  useEffect(() => {
+    if (isSubmitted) {
+      clearSavedExamState();
+    }
+  }, [isSubmitted]);
 
   useEffect(() => {
     setSelectedOption(userAnswers[currentQuestionIndex] ?? null);
@@ -251,6 +407,7 @@ function App() {
     (answer) => answer !== null && answer !== undefined,
   ).length;
   const unansweredCount = quizData.length - answeredCount;
+  const reviewCount = markedForReview.filter(Boolean).length;
   const progressPercent = Math.round((answeredCount / quizData.length) * 100);
 
   const evaluatedAnswers = quizData.map((question, index) => {
@@ -266,27 +423,55 @@ function App() {
   const score = evaluatedAnswers.filter((item) => item.isCorrect).length;
 
   const summary = {};
-  evaluatedAnswers.forEach((item) => {
-    if (!item.isAnswered) {
+  quizData.forEach((question, index) => {
+    const key = question.category;
+    const selected = userAnswers[index];
+    const isAnswered = selected !== null && selected !== undefined;
+    const isCorrect = isAnswered && selected === question.answerIndex;
+    const isReview = Boolean(markedForReview[index]);
+
+    if (!summary[key]) {
+      summary[key] = {
+        totalQuestions: 0,
+        attempted: 0,
+        correct: 0,
+        wrong: 0,
+        unanswered: 0,
+        reviewMarked: 0,
+      };
+    }
+
+    summary[key].totalQuestions += 1;
+    if (isReview) {
+      summary[key].reviewMarked += 1;
+    }
+
+    if (!isAnswered) {
+      summary[key].unanswered += 1;
       return;
     }
 
-    const key = item.category;
-    if (!summary[key]) {
-      summary[key] = { total: 0, correct: 0 };
-    }
-
-    summary[key].total += 1;
-    if (item.isCorrect) {
+    summary[key].attempted += 1;
+    if (isCorrect) {
       summary[key].correct += 1;
+    } else {
+      summary[key].wrong += 1;
     }
   });
 
   const categorySummary = Object.entries(summary)
     .map(([category, stats]) => ({
       category,
-      total: stats.total,
+      totalQuestions: stats.totalQuestions,
+      attempted: stats.attempted,
       correct: stats.correct,
+      wrong: stats.wrong,
+      unanswered: stats.unanswered,
+      reviewMarked: stats.reviewMarked,
+      accuracy:
+        stats.attempted > 0
+          ? Math.round((stats.correct / stats.attempted) * 100)
+          : 0,
     }))
     .sort((a, b) => a.category.localeCompare(b.category));
 
@@ -307,30 +492,206 @@ function App() {
       nextAnswers[currentQuestionIndex] = value;
       return nextAnswers;
     });
+
+    // If user answered this question, clear review flag to avoid accidental leftover marks.
+    if (markedForReview[currentQuestionIndex]) {
+      setMarkedForReview((previous) => {
+        const next = [...previous];
+        next[currentQuestionIndex] = false;
+        return next;
+      });
+    }
   };
 
   const handleNext = () => {
     const isLastQuestion = currentQuestionIndex === quizData.length - 1;
     if (isLastQuestion) {
-      setIsSubmitted(true);
+      const markedNumbers = quizData
+        .map((_, index) => (markedForReview[index] ? index + 1 : null))
+        .filter((value) => value !== null);
+      setPendingMarkedNumbers(markedNumbers);
+      setIsSubmitDialogOpen(true);
       return;
     }
 
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
+  const handlePrevious = () => {
+    setCurrentQuestionIndex((prevIndex) => Math.max(0, prevIndex - 1));
+  };
+
+  const handleToggleReview = () => {
+    setMarkedForReview((previous) => {
+      const next = [...previous];
+      next[currentQuestionIndex] = !next[currentQuestionIndex];
+      return next;
+    });
+  };
+
   const handleQuestionJump = (index) => {
     setCurrentQuestionIndex(index);
   };
 
+  const handleSubmitNow = () => {
+    setIsSubmitDialogOpen(false);
+    setIsSubmitted(true);
+  };
+
+  const handleBackToQuestion = () => {
+    setIsSubmitDialogOpen(false);
+    if (pendingMarkedNumbers.length > 0) {
+      setCurrentQuestionIndex(pendingMarkedNumbers[0] - 1);
+    }
+  };
+
   const restartQuiz = () => {
     setQuizData((previousQuizData) => [...previousQuizData]);
+    setHasStarted(false);
     setCurrentQuestionIndex(0);
     setSelectedOption(null);
     setIsSubmitted(false);
+    setIsSubmitDialogOpen(false);
+    setPendingMarkedNumbers([]);
     setUserAnswers([]);
+    setMarkedForReview([]);
     setTimeLeft(QUIZ_DURATION_SECONDS);
+    setExamEndTime(null);
+    clearSavedExamState();
   };
+
+  const handleStartExam = () => {
+    setHasStarted(true);
+
+    if (!examEndTime) {
+      setTimeLeft(QUIZ_DURATION_SECONDS);
+      setExamEndTime(Date.now() + QUIZ_DURATION_SECONDS * 1000);
+    }
+  };
+
+  if (!hasStarted && !isSubmitted) {
+    return (
+      <main className="app-shell">
+        <section className="quiz-card result-card">
+          <p className="eyebrow">CMLT Exam</p>
+          <h1>Ready To Start Your Exam?</h1>
+          <div className="exam-guide">
+            <p>
+              Total questions: <strong>{quizData.length}</strong>
+            </p>
+            <p>
+              Duration: <strong>2 hours</strong>
+            </p>
+            <p>
+              Pass mark: <strong>{PASS_MARK}%</strong> (below {PASS_MARK}% is
+              "Failed")
+            </p>
+
+            <h2>Exam Instructions</h2>
+            <ul>
+              <li>Each question has one correct answer.</li>
+              <li>
+                Use Next, Previous, or the question panel to move between
+                questions.
+              </li>
+              <li>Answered questions are highlighted in the question panel.</li>
+              <li>
+                Refreshing during exam will resume your in-progress attempt.
+              </li>
+              <li>Submit on the last question or when time reaches 00:00.</li>
+              <li>
+                Final result includes score and full correct/wrong review.
+              </li>
+            </ul>
+
+            <h2>Rules And Regulations</h2>
+            <ul>
+              <li>
+                Total exam duration is fixed and the timer runs continuously.
+              </li>
+              <li>
+                If you select or change an answer, that question is
+                auto-unmarked from review.
+              </li>
+              <li>
+                When time reaches 00:00, exam is auto-submitted immediately.
+              </li>
+              <li>
+                You can change any selected answer before final submission.
+              </li>
+              <li>
+                On final submit, you will see attempted, unattempted, and review
+                counts for confirmation.
+              </li>
+              <li>
+                Marking for review does not add or remove marks by itself.
+              </li>
+            </ul>
+
+            <h2>How To Use Mark Review</h2>
+            <ul>
+              <li>
+                Click Mark Review on a question to flag it for later checking.
+              </li>
+              <li>
+                A marked question gets a special indicator in the question
+                panel.
+              </li>
+              <li>
+                Review count in the side panel shows how many are currently
+                flagged.
+              </li>
+              <li>
+                Click Unmark Review to remove the flag once you are satisfied.
+              </li>
+              <li>You can still submit with marked questions if you choose.</li>
+            </ul>
+
+            <h2>Distribution Of Marks</h2>
+            <div className="distribution-wrap">
+              <table
+                className="distribution-table"
+                aria-label="Marks distribution"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">S.N.</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Marks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {SUBJECT_MARK_DISTRIBUTION.map((item) => (
+                    <tr key={item.sn}>
+                      <td>{item.sn}</td>
+                      <td>{item.subject}</td>
+                      <td>{item.marks}</td>
+                    </tr>
+                  ))}
+                  <tr className="distribution-total-row">
+                    <td colSpan={2}>Total</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="primary-btn"
+            onClick={handleStartExam}
+          >
+            Start Exam
+          </button>
+          <p className="result-note" style={{ marginTop: 10 }}>
+            Before clicking Start Exam, please read all instructions carefully.
+            If there is any confusion, ask your Exam provider Mr. Anush
+            Dhungana.
+          </p>
+        </section>
+      </main>
+    );
+  }
 
   if (isSubmitted || isFinished) {
     const percentage = Math.round((score / quizData.length) * 100);
@@ -368,9 +729,13 @@ function App() {
             {categorySummary.map((item) => (
               <div key={item.category} className="summary-item">
                 <strong>{formatCategory(item.category)}</strong>
-                <span>
-                  {item.correct}/{item.total} correct
-                </span>
+                <span>Questions: {item.totalQuestions}</span>
+                <span>Attempted: {item.attempted}</span>
+                <span>Correct: {item.correct}</span>
+                <span>Wrong: {item.wrong}</span>
+                <span>Unanswered: {item.unanswered}</span>
+                <span>Marked Review: {item.reviewMarked}</span>
+                <span>Accuracy: {item.accuracy}%</span>
               </div>
             ))}
           </div>
@@ -473,11 +838,34 @@ function App() {
 
           <div className="actions">
             <p className="progress">{progressLabel}</p>
-            <button type="button" className="primary-btn" onClick={handleNext}>
-              {currentQuestionIndex === quizData.length - 1
-                ? "Submit Exam"
-                : "Next"}
-            </button>
+            <div className="actions-group">
+              <button
+                type="button"
+                className="primary-btn secondary-btn"
+                onClick={handlePrevious}
+                disabled={currentQuestionIndex === 0}
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                className="primary-btn review-btn"
+                onClick={handleToggleReview}
+              >
+                {markedForReview[currentQuestionIndex]
+                  ? "Unmark Review"
+                  : "Mark Review"}
+              </button>
+              <button
+                type="button"
+                className="primary-btn"
+                onClick={handleNext}
+              >
+                {currentQuestionIndex === quizData.length - 1
+                  ? "Submit Exam"
+                  : "Next"}
+              </button>
+            </div>
           </div>
         </section>
 
@@ -486,19 +874,21 @@ function App() {
           <div className="palette-summary">
             <p className="score-chip">Answered: {answeredCount}</p>
             <p className="score-chip palette-left">Left: {unansweredCount}</p>
+            <p className="score-chip palette-review">Review: {reviewCount}</p>
           </div>
           <div className="question-palette">
             {quizData.map((_, index) => {
               const questionNumber = index + 1;
               const hasAnswer =
                 userAnswers[index] !== null && userAnswers[index] !== undefined;
+              const isReview = Boolean(markedForReview[index]);
               const isCurrent = index === currentQuestionIndex;
               const rangeClass = getPaletteRangeClass(questionNumber);
               return (
                 <button
                   type="button"
                   key={`q-${questionNumber}`}
-                  className={`palette-btn ${rangeClass} ${hasAnswer ? "is-answered" : ""} ${isCurrent ? "is-current" : ""}`}
+                  className={`palette-btn ${rangeClass} ${hasAnswer ? "is-answered" : ""} ${isReview ? "is-review" : ""} ${isCurrent ? "is-current" : ""}`}
                   onClick={() => handleQuestionJump(index)}
                   aria-label={`Go to question ${questionNumber}`}
                 >
@@ -509,6 +899,41 @@ function App() {
           </div>
         </aside>
       </div>
+
+      {isSubmitDialogOpen && (
+        <div className="submit-dialog-overlay" role="dialog" aria-modal="true">
+          <div className="submit-dialog-card">
+            <p className="eyebrow">Confirm Submission</p>
+            <h2>Submit Exam Now?</h2>
+            <p>Attempted: {answeredCount}</p>
+            <p>Unanswered: {unansweredCount}</p>
+            <p>Marked for review: {reviewCount}</p>
+            {pendingMarkedNumbers.length > 0 && (
+              <p className="result-note">
+                Pending review question numbers:{" "}
+                {pendingMarkedNumbers.slice(0, 12).join(", ")}
+                {pendingMarkedNumbers.length > 12 ? "..." : ""}
+              </p>
+            )}
+            <div className="actions-group" style={{ justifyContent: "center" }}>
+              <button
+                type="button"
+                className="primary-btn secondary-btn"
+                onClick={handleBackToQuestion}
+              >
+                Back To Question
+              </button>
+              <button
+                type="button"
+                className="primary-btn"
+                onClick={handleSubmitNow}
+              >
+                Submit Now
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
