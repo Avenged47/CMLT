@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import cmltPreparationRaw from "../data/cmlt_preparation.json?raw";
 import newQuestionRaw from "../data/newQuestion.json?raw";
+import eightQuestionsRaw from "../data/8questions.json?raw";
 
 const QUIZ_DURATION_SECONDS = 90 * 60;
 const PREVIEW_LIMIT = 220;
@@ -10,9 +11,10 @@ const OPTION_LABELS = ["A", "B", "C", "D"];
 const DATASET_SOURCES = {
   cmltPreparation: cmltPreparationRaw,
   newQuestion: newQuestionRaw,
+  eightQuestions: eightQuestionsRaw,
 };
 
-const ACTIVE_SET = "newQuestion";
+const ACTIVE_SET = "eightQuestions";
 const EXAM_STATE_STORAGE_KEY = "cmlt_exam_state_v1";
 const SUBJECT_MARK_DISTRIBUTION = [
   { sn: "1.", subject: "Clinical Biochemistry", marks: "20%" },
@@ -110,7 +112,7 @@ const parseDatasetRows = (rawText, setName) => {
     return parsePreparationRows(rawText);
   }
 
-  if (setName === "newQuestion") {
+  if (setName === "newQuestion" || setName === "eightQuestions") {
     return parseJsonArray(rawText);
   }
 
@@ -406,7 +408,7 @@ function App() {
       <main className="app-shell">
         <section className="quiz-card result-card">
           <p className="eyebrow">Loading</p>
-          <h1>Preparing questions from newQuestion.json...</h1>
+          <h1>Preparing questions from {ACTIVE_SET}.json...</h1>
         </section>
       </main>
     );

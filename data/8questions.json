@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Which vitamin deficiency causes scurvy?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    "answer": "Vitamin C"
+  },
+  {
+    "question": "The principal enzyme present in saliva is:",
+    "options": ["Lipase", "Pepsin", "Amylase", "Trypsin"],
+    "answer": "Amylase"
+  },
+  {
+    "question": "Which hormone is known as the 'emergency hormone'?",
+    "options": ["Insulin", "Thyroxine", "Adrenaline", "Progesterone"],
+    "answer": "Adrenaline"
+  },
+  {
+    "question": "The normal fasting period before a fasting blood glucose test is:",
+    "options": ["2-4 hours", "4-6 hours", "8-12 hours", "14-18 hours"],
+    "answer": "8-12 hours"
+  },
+  {
+    "question": "Which of the following is the storage form of iron in the body?",
+    "options": ["Transferrin", "Ferritin", "Hemoglobin", "Myoglobin"],
+    "answer": "Ferritin"
+  },
+  {
+    "question": "Which lipoprotein is commonly called 'good cholesterol'?",
+    "options": ["LDL", "VLDL", "HDL", "Chylomicron"],
+    "answer": "HDL"
+  },
+  {
+    "question": "Vitamin D deficiency in children causes:",
+    "options": ["Scurvy", "Rickets", "Night blindness", "Beriberi"],
+    "answer": "Rickets"
+  },
+  {
+    "question": "The enzyme urease is used in the estimation of:",
+    "options": ["Glucose", "Urea", "Creatinine", "Cholesterol"],
+    "answer": "Urea"
+  }
+]
