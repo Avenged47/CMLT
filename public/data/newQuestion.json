@@ -1,0 +1,742 @@
+[
+  {
+    "question": "The normal serum sodium concentration is:",
+    "options": [
+      "125-135 mEq/L",
+      "135-145 mEq/L",
+      "145-155 mEq/L",
+      "155-165 mEq/L"
+    ],
+    "answer": "135-145 mEq/L"
+  },
+  {
+    "question": "The normal serum potassium concentration is:",
+    "options": [
+      "1.5-2.5 mEq/L",
+      "2.5-3.5 mEq/L",
+      "3.5-5.0 mEq/L",
+      "5.5-7.0 mEq/L"
+    ],
+    "answer": "3.5-5.0 mEq/L"
+  },
+  {
+    "question": "HbA1c reflects the average blood glucose level over approximately:",
+    "options": ["1 week", "1 month", "2-3 months", "1 year"],
+    "answer": "2-3 months"
+  },
+  {
+    "question": "The full form of BUN is:",
+    "options": [
+      "Blood Urea Nitrogen",
+      "Blood Urine Nitrogen",
+      "Blood Urea Nitrate",
+      "Blood Uric Nitrogen"
+    ],
+    "answer": "Blood Urea Nitrogen"
+  },
+  {
+    "question": "Jaffe reaction is commonly used for estimation of:",
+    "options": ["Glucose", "Creatinine", "Uric acid", "Bilirubin"],
+    "answer": "Creatinine"
+  },
+  {
+    "question": "The normal serum calcium level is approximately:",
+    "options": ["4-6 mg/dL", "6-8 mg/dL", "8.5-10.5 mg/dL", "12-14 mg/dL"],
+    "answer": "8.5-10.5 mg/dL"
+  },
+  {
+    "question": "Which lipoprotein carries cholesterol from the liver to peripheral tissues?",
+    "options": ["HDL", "LDL", "Albumin", "Chylomicron"],
+    "answer": "LDL"
+  },
+  {
+    "question": "The normal serum uric acid level in adults is approximately:",
+    "options": ["1-2 mg/dL", "3-7 mg/dL", "8-12 mg/dL", "12-15 mg/dL"],
+    "answer": "3-7 mg/dL"
+  },
+  {
+    "question": "A markedly increased serum amylase level is most suggestive of:",
+    "options": ["Hepatitis", "Acute pancreatitis", "Nephritis", "Anemia"],
+    "answer": "Acute pancreatitis"
+  },
+  {
+    "question": "The full form of VLDL is:",
+    "options": [
+      "Very Low Density Lipoprotein",
+      "Variable Lipid Density Level",
+      "Very Large Density Lipoprotein",
+      "Vascular Lipid Density Layer"
+    ],
+    "answer": "Very Low Density Lipoprotein"
+  },
+  {
+    "question": "The normal serum chloride concentration is:",
+    "options": ["60-80 mEq/L", "80-95 mEq/L", "98-106 mEq/L", "120-130 mEq/L"],
+    "answer": "98-106 mEq/L"
+  },
+  {
+    "question": "The major protein present in plasma is:",
+    "options": ["Globulin", "Albumin", "Fibrin", "Hemoglobin"],
+    "answer": "Albumin"
+  },
+  {
+    "question": "Which enzyme is commonly used as a marker of myocardial injury?",
+    "options": ["ALT", "ALP", "CK-MB", "ACP"],
+    "answer": "CK-MB"
+  },
+  {
+    "question": "The normal serum total protein concentration is approximately:",
+    "options": ["2-4 g/dL", "4-5 g/dL", "6-8 g/dL", "9-12 g/dL"],
+    "answer": "6-8 g/dL"
+  },
+  {
+    "question": "Which hormone increases blood glucose concentration?",
+    "options": ["Insulin", "Glucagon", "Calcitonin", "Aldosterone"],
+    "answer": "Glucagon"
+  },
+  {
+    "question": "The wavelength range of visible light is approximately:",
+    "options": ["100-200 nm", "200-400 nm", "400-700 nm", "700-900 nm"],
+    "answer": "400-700 nm"
+  },
+  {
+    "question": "The normal serum phosphorus level is approximately:",
+    "options": ["1-2 mg/dL", "2.5-4.5 mg/dL", "5-7 mg/dL", "8-10 mg/dL"],
+    "answer": "2.5-4.5 mg/dL"
+  },
+  {
+    "question": "Which plasma protein helps maintain colloidal osmotic pressure?",
+    "options": ["Albumin", "Globulin", "Fibrinogen", "Prothrombin"],
+    "answer": "Albumin"
+  },
+  {
+    "question": "The reagent used in the Biuret method is mainly for estimation of:",
+    "options": ["Glucose", "Protein", "Creatinine", "Cholesterol"],
+    "answer": "Protein"
+  },
+  {
+    "question": "The normal serum magnesium concentration is approximately:",
+    "options": [
+      "0.5-1.0 mg/dL",
+      "1.5-2.5 mg/dL",
+      "3.5-4.5 mg/dL",
+      "5.0-6.0 mg/dL"
+    ],
+    "answer": "1.5-2.5 mg/dL"
+  },
+
+  {
+    "question": "The normal total leukocyte count in adults is:",
+    "options": [
+      "1,000-4,000/mm³",
+      "4,000-11,000/mm³",
+      "12,000-18,000/mm³",
+      "20,000-25,000/mm³"
+    ],
+    "answer": "4,000-11,000/mm³"
+  },
+  {
+    "question": "The normal RBC count in an adult male is approximately:",
+    "options": [
+      "2-3 million/mm³",
+      "3-4 million/mm³",
+      "4.5-6.0 million/mm³",
+      "7-8 million/mm³"
+    ],
+    "answer": "4.5-6.0 million/mm³"
+  },
+  {
+    "question": "The normal packed cell volume (PCV) in adult males is:",
+    "options": ["20-30%", "30-40%", "40-54%", "60-70%"],
+    "answer": "40-54%"
+  },
+  {
+    "question": "The full form of MCHC is:",
+    "options": [
+      "Mean Corpuscular Hemoglobin Concentration",
+      "Mean Cell Hemoglobin Count",
+      "Maximum Corpuscular Hemoglobin Concentration",
+      "Mean Cellular Hematocrit Count"
+    ],
+    "answer": "Mean Corpuscular Hemoglobin Concentration"
+  },
+  {
+    "question": "The normal ESR in adult males by Westergren method is:",
+    "options": ["0-15 mm/hr", "20-30 mm/hr", "35-45 mm/hr", "50-60 mm/hr"],
+    "answer": "0-15 mm/hr"
+  },
+  {
+    "question": "Which cell is the precursor of erythrocytes?",
+    "options": ["Myeloblast", "Proerythroblast", "Megakaryoblast", "Monoblast"],
+    "answer": "Proerythroblast"
+  },
+  {
+    "question": "The normal reticulocyte count in adults is:",
+    "options": ["0.5-2.5%", "3-5%", "6-8%", "10-12%"],
+    "answer": "0.5-2.5%"
+  },
+  {
+    "question": "The average life span of a red blood cell is:",
+    "options": ["60 days", "90 days", "120 days", "180 days"],
+    "answer": "120 days"
+  },
+  {
+    "question": "Which anticoagulant is preferred for ESR by Westergren method?",
+    "options": ["Heparin", "EDTA", "Sodium citrate", "Oxalate"],
+    "answer": "Sodium citrate"
+  },
+  {
+    "question": "The normal MCV range is:",
+    "options": ["50-70 fL", "80-100 fL", "110-130 fL", "140-160 fL"],
+    "answer": "80-100 fL"
+  },
+  {
+    "question": "A decrease in all blood cell lines is known as:",
+    "options": [
+      "Leukocytosis",
+      "Polycythemia",
+      "Pancytopenia",
+      "Thrombocytosis"
+    ],
+    "answer": "Pancytopenia"
+  },
+  {
+    "question": "Which leukocyte is normally the most abundant in peripheral blood?",
+    "options": ["Lymphocyte", "Monocyte", "Eosinophil", "Neutrophil"],
+    "answer": "Neutrophil"
+  },
+  {
+    "question": "The normal bleeding time by Ivy method is approximately:",
+    "options": [
+      "2-7 minutes",
+      "10-15 minutes",
+      "20-25 minutes",
+      "30-35 minutes"
+    ],
+    "answer": "2-7 minutes"
+  },
+  {
+    "question": "The normal clotting time is approximately:",
+    "options": [
+      "1-3 minutes",
+      "5-11 minutes",
+      "15-20 minutes",
+      "25-30 minutes"
+    ],
+    "answer": "5-11 minutes"
+  },
+  {
+    "question": "Which stain is routinely used for peripheral blood smear examination?",
+    "options": [
+      "Gram stain",
+      "Leishman stain",
+      "PAS stain",
+      "Ziehl-Neelsen stain"
+    ],
+    "answer": "Leishman stain"
+  },
+  {
+    "question": "The full form of PCV is:",
+    "options": [
+      "Packed Cell Volume",
+      "Packed Corpuscular Value",
+      "Platelet Cell Volume",
+      "Peripheral Cell Value"
+    ],
+    "answer": "Packed Cell Volume"
+  },
+  {
+    "question": "The normal differential count of neutrophils is:",
+    "options": ["10-20%", "20-30%", "40-75%", "80-95%"],
+    "answer": "40-75%"
+  },
+  {
+    "question": "Which clotting factor is deficient in Hemophilia B?",
+    "options": ["Factor VIII", "Factor IX", "Factor X", "Factor XI"],
+    "answer": "Factor IX"
+  },
+  {
+    "question": "The principal site of hematopoiesis in adults is:",
+    "options": ["Liver", "Spleen", "Red bone marrow", "Lymph node"],
+    "answer": "Red bone marrow"
+  },
+  {
+    "question": "The normal platelet count is best expressed as:",
+    "options": [
+      "50,000-100,000/mm³",
+      "100,000-150,000/mm³",
+      "150,000-450,000/mm³",
+      "500,000-800,000/mm³"
+    ],
+    "answer": "150,000-450,000/mm³"
+  },
+
+  {
+    "question": "Which of the following bacteria is acid-fast?",
+    "options": [
+      "Escherichia coli",
+      "Staphylococcus aureus",
+      "Mycobacterium tuberculosis",
+      "Streptococcus pyogenes"
+    ],
+    "answer": "Mycobacterium tuberculosis"
+  },
+  {
+    "question": "The incubation temperature commonly used for bacterial culture is:",
+    "options": ["20°C", "25°C", "37°C", "45°C"],
+    "answer": "37°C"
+  },
+  {
+    "question": "The full form of ELISA is:",
+    "options": [
+      "Enzyme Linked Immunosorbent Assay",
+      "Enzyme Linked Immunological System Assay",
+      "Enzyme Limited Immunosorbent Assay",
+      "Enzyme Linked Immunology Screening Assay"
+    ],
+    "answer": "Enzyme Linked Immunosorbent Assay"
+  },
+  {
+    "question": "The primary stain used in Gram staining is:",
+    "options": [
+      "Safranin",
+      "Crystal violet",
+      "Methylene blue",
+      "Carbol fuchsin"
+    ],
+    "answer": "Crystal violet"
+  },
+  {
+    "question": "Which of the following is a Gram-positive cocci in clusters?",
+    "options": [
+      "Staphylococcus aureus",
+      "Streptococcus pyogenes",
+      "Neisseria gonorrhoeae",
+      "Vibrio cholerae"
+    ],
+    "answer": "Staphylococcus aureus"
+  },
+  {
+    "question": "The full form of HIV is:",
+    "options": [
+      "Human Immunodeficiency Virus",
+      "Human Infectious Virus",
+      "Human Immune Virus",
+      "Human Internal Virus"
+    ],
+    "answer": "Human Immunodeficiency Virus"
+  },
+  {
+    "question": "Which culture medium is commonly used for antibiotic susceptibility testing?",
+    "options": [
+      "MacConkey agar",
+      "Blood agar",
+      "Mueller-Hinton agar",
+      "Chocolate agar"
+    ],
+    "answer": "Mueller-Hinton agar"
+  },
+  {
+    "question": "The causative agent of cholera is:",
+    "options": [
+      "Salmonella typhi",
+      "Shigella dysenteriae",
+      "Vibrio cholerae",
+      "Escherichia coli"
+    ],
+    "answer": "Vibrio cholerae"
+  },
+  {
+    "question": "Autoclaving is usually carried out at:",
+    "options": [
+      "100°C for 15 minutes",
+      "121°C for 15 minutes",
+      "140°C for 30 minutes",
+      "160°C for 1 hour"
+    ],
+    "answer": "121°C for 15 minutes"
+  },
+  {
+    "question": "Which immunoglobulin is produced first during a primary immune response?",
+    "options": ["IgA", "IgG", "IgM", "IgE"],
+    "answer": "IgM"
+  },
+  {
+    "question": "The causative organism of typhoid fever is:",
+    "options": [
+      "Salmonella typhi",
+      "Shigella flexneri",
+      "Proteus mirabilis",
+      "Klebsiella pneumoniae"
+    ],
+    "answer": "Salmonella typhi"
+  },
+  {
+    "question": "The Kirby-Bauer method is used for:",
+    "options": [
+      "Bacterial staining",
+      "Antibiotic sensitivity testing",
+      "Blood culture",
+      "Fungal identification"
+    ],
+    "answer": "Antibiotic sensitivity testing"
+  },
+  {
+    "question": "Which of the following bacteria produces spores?",
+    "options": [
+      "Bacillus species",
+      "Neisseria species",
+      "Vibrio species",
+      "Haemophilus species"
+    ],
+    "answer": "Bacillus species"
+  },
+  {
+    "question": "The full form of AIDS is:",
+    "options": [
+      "Acquired Immune Deficiency Syndrome",
+      "Acquired Infectious Disease Syndrome",
+      "Advanced Immune Deficiency State",
+      "Acute Immune Disease Syndrome"
+    ],
+    "answer": "Acquired Immune Deficiency Syndrome"
+  },
+  {
+    "question": "Which of the following is used as a disinfectant for laboratory surfaces?",
+    "options": [
+      "Normal saline",
+      "70% alcohol",
+      "Distilled water",
+      "Glucose solution"
+    ],
+    "answer": "70% alcohol"
+  },
+  {
+    "question": "The Widal test is used in the diagnosis of:",
+    "options": ["Tuberculosis", "Typhoid fever", "Malaria", "Leprosy"],
+    "answer": "Typhoid fever"
+  },
+  {
+    "question": "Which immunoglobulin is capable of crossing the placenta?",
+    "options": ["IgM", "IgA", "IgG", "IgE"],
+    "answer": "IgG"
+  },
+  {
+    "question": "The full form of BCG vaccine is:",
+    "options": [
+      "Bacillus Calmette-Guerin",
+      "Bacterial Culture Growth",
+      "Bacillary Culture Group",
+      "Bacterial Calmette Growth"
+    ],
+    "answer": "Bacillus Calmette-Guerin"
+  },
+  {
+    "question": "A clear zone around an antibiotic disc indicates:",
+    "options": [
+      "Contamination",
+      "Resistance",
+      "Zone of inhibition",
+      "Poor culture growth"
+    ],
+    "answer": "Zone of inhibition"
+  },
+  {
+    "question": "The Mantoux test is used for the diagnosis of:",
+    "options": ["Typhoid", "Tuberculosis", "Leprosy", "Cholera"],
+    "answer": "Tuberculosis"
+  },
+
+  {
+    "question": "The most commonly used fixative in histopathology is:",
+    "options": ["Methanol", "10% Formalin", "Acetone", "Ethanol"],
+    "answer": "10% Formalin"
+  },
+  {
+    "question": "The routine stain used in histopathology laboratory is:",
+    "options": [
+      "Gram stain",
+      "PAS stain",
+      "Hematoxylin and Eosin stain",
+      "Ziehl-Neelsen stain"
+    ],
+    "answer": "Hematoxylin and Eosin stain"
+  },
+  {
+    "question": "The purpose of tissue fixation is to:",
+    "options": [
+      "Increase tissue size",
+      "Prevent tissue decomposition",
+      "Stain the tissue",
+      "Embed the tissue"
+    ],
+    "answer": "Prevent tissue decomposition"
+  },
+  {
+    "question": "The instrument used for cutting thin tissue sections is:",
+    "options": ["Cryostat", "Microtome", "Histokinete", "Centrifuge"],
+    "answer": "Microtome"
+  },
+  {
+    "question": "The usual thickness of paraffin sections prepared for routine histology is:",
+    "options": ["1-2 µm", "3-5 µm", "10-15 µm", "20-25 µm"],
+    "answer": "3-5 µm"
+  },
+  {
+    "question": "The most commonly used embedding medium in histopathology is:",
+    "options": ["Gelatin", "Paraffin wax", "Celloidin", "Resin"],
+    "answer": "Paraffin wax"
+  },
+  {
+    "question": "Papanicolaou stain is primarily used for examination of:",
+    "options": [
+      "Peripheral blood smear",
+      "Bone marrow smear",
+      "Cervical smear",
+      "Sputum culture"
+    ],
+    "answer": "Cervical smear"
+  },
+  {
+    "question": "The clearing agent most commonly used during tissue processing is:",
+    "options": ["Formalin", "Xylene", "Methanol", "Acetone"],
+    "answer": "Xylene"
+  },
+  {
+    "question": "A biopsy refers to:",
+    "options": [
+      "Examination of blood",
+      "Examination of urine",
+      "Removal of tissue from a living body for diagnosis",
+      "Examination of tissue from a dead body"
+    ],
+    "answer": "Removal of tissue from a living body for diagnosis"
+  },
+  {
+    "question": "The PAS stain is commonly used to demonstrate:",
+    "options": [
+      "Acid-fast bacilli",
+      "Glycogen and carbohydrates",
+      "Malaria parasites",
+      "Bacteria"
+    ],
+    "answer": "Glycogen and carbohydrates"
+  },
+
+  {
+    "question": "The normal resting heart rate in adults is:",
+    "options": [
+      "40-60 beats/min",
+      "60-100 beats/min",
+      "100-120 beats/min",
+      "120-140 beats/min"
+    ],
+    "answer": "60-100 beats/min"
+  },
+  {
+    "question": "The functional unit of the kidney is:",
+    "options": ["Neuron", "Nephron", "Alveolus", "Glomerulus"],
+    "answer": "Nephron"
+  },
+  {
+    "question": "The normal body temperature is approximately:",
+    "options": ["35°C", "36°C", "37°C", "38°C"],
+    "answer": "37°C"
+  },
+  {
+    "question": "Which chamber of the heart has the thickest wall?",
+    "options": [
+      "Right atrium",
+      "Left atrium",
+      "Right ventricle",
+      "Left ventricle"
+    ],
+    "answer": "Left ventricle"
+  },
+  {
+    "question": "The largest gland in the human body is:",
+    "options": ["Pancreas", "Pituitary gland", "Thyroid gland", "Liver"],
+    "answer": "Liver"
+  },
+  {
+    "question": "The hormone responsible for regulating blood calcium level is:",
+    "options": ["Insulin", "Thyroxine", "Parathyroid hormone", "Adrenaline"],
+    "answer": "Parathyroid hormone"
+  },
+  {
+    "question": "The normal respiratory rate in an adult is:",
+    "options": [
+      "6-10 breaths/min",
+      "12-20 breaths/min",
+      "25-35 breaths/min",
+      "40-50 breaths/min"
+    ],
+    "answer": "12-20 breaths/min"
+  },
+  {
+    "question": "Which part of the brain is responsible for maintaining balance and posture?",
+    "options": ["Cerebrum", "Medulla oblongata", "Cerebellum", "Hypothalamus"],
+    "answer": "Cerebellum"
+  },
+  {
+    "question": "The normal blood pressure of a healthy adult is approximately:",
+    "options": ["90/60 mmHg", "100/70 mmHg", "120/80 mmHg", "140/100 mmHg"],
+    "answer": "120/80 mmHg"
+  },
+  {
+    "question": "The total number of permanent teeth in an adult is:",
+    "options": ["28", "30", "32", "34"],
+    "answer": "32"
+  },
+
+  {
+    "question": "The infective stage of Entamoeba histolytica for humans is:",
+    "options": ["Trophozoite", "Quadrinucleate cyst", "Egg", "Larva"],
+    "answer": "Quadrinucleate cyst"
+  },
+  {
+    "question": "The vector responsible for transmission of malaria is:",
+    "options": [
+      "Culex mosquito",
+      "Aedes mosquito",
+      "Female Anopheles mosquito",
+      "Sandfly"
+    ],
+    "answer": "Female Anopheles mosquito"
+  },
+  {
+    "question": "The parasite commonly known as giant intestinal fluke is:",
+    "options": [
+      "Fasciola hepatica",
+      "Fasciolopsis buski",
+      "Taenia saginata",
+      "Enterobius vermicularis"
+    ],
+    "answer": "Fasciolopsis buski"
+  },
+  {
+    "question": "The diagnostic stage of Plasmodium species commonly observed in peripheral blood smear is:",
+    "options": ["Sporozoite", "Merozoite", "Trophozoite", "Ookinete"],
+    "answer": "Trophozoite"
+  },
+  {
+    "question": "The causative agent of visceral leishmaniasis (Kala-azar) is:",
+    "options": [
+      "Leishmania donovani",
+      "Trypanosoma gambiense",
+      "Giardia lamblia",
+      "Balantidium coli"
+    ],
+    "answer": "Leishmania donovani"
+  },
+  {
+    "question": "The instrument commonly used to measure absorbance of a colored solution is:",
+    "options": ["Autoclave", "Spectrophotometer", "Incubator", "Centrifuge"],
+    "answer": "Spectrophotometer"
+  },
+  {
+    "question": "According to Beer-Lambert's law, absorbance is directly proportional to:",
+    "options": [
+      "Temperature",
+      "Concentration of solution",
+      "Pressure",
+      "Humidity"
+    ],
+    "answer": "Concentration of solution"
+  },
+  {
+    "question": "The primary function of a centrifuge in the laboratory is:",
+    "options": [
+      "Sterilization of media",
+      "Measurement of absorbance",
+      "Separation of components based on density",
+      "Incubation of cultures"
+    ],
+    "answer": "Separation of components based on density"
+  },
+  {
+    "question": "The wavelength of light is measured in:",
+    "options": ["Gram", "Milliliter", "Nanometer (nm)", "Second"],
+    "answer": "Nanometer (nm)"
+  },
+  {
+    "question": "Which of the following instruments is commonly used for automated hematology analysis?",
+    "options": [
+      "Colorimeter",
+      "Hematology Analyzer",
+      "Autoclave",
+      "Water Bath"
+    ],
+    "answer": "Hematology Analyzer"
+  },
+  {
+    "question": "The universal recipient blood group for red cell transfusion is:",
+    "options": ["O negative", "A positive", "AB positive", "B positive"],
+    "answer": "AB positive"
+  },
+  {
+    "question": "The anticoagulant-preservative commonly used in blood bags is:",
+    "options": ["EDTA", "CPDA-1", "Heparin", "Oxalate"],
+    "answer": "CPDA-1"
+  },
+  {
+    "question": "The storage temperature for whole blood is:",
+    "options": ["2-6°C", "10-15°C", "20-25°C", "35-37°C"],
+    "answer": "2-6°C"
+  },
+  {
+    "question": "The Rh factor was first discovered in:",
+    "options": ["Rabbit", "Monkey", "Rat", "Dog"],
+    "answer": "Monkey"
+  },
+  {
+    "question": "ABO blood grouping is based on the presence of:",
+    "options": [
+      "Antibodies only",
+      "Antigens on red blood cells",
+      "Platelet antigens",
+      "Plasma proteins"
+    ],
+    "answer": "Antigens on red blood cells"
+  },
+  {
+    "question": "Necrosis is best defined as:",
+    "options": [
+      "Normal cell growth",
+      "Programmed cell death",
+      "Death of cells in living tissue",
+      "Cell division"
+    ],
+    "answer": "Death of cells in living tissue"
+  },
+  {
+    "question": "The most common type of necrosis seen in myocardial infarction is:",
+    "options": [
+      "Liquefactive necrosis",
+      "Caseous necrosis",
+      "Coagulative necrosis",
+      "Fat necrosis"
+    ],
+    "answer": "Coagulative necrosis"
+  },
+  {
+    "question": "The cardinal signs of acute inflammation include all of the following except:",
+    "options": ["Redness", "Swelling", "Pain", "Anemia"],
+    "answer": "Anemia"
+  },
+  {
+    "question": "A benign tumor of glandular epithelium is called:",
+    "options": ["Adenoma", "Carcinoma", "Sarcoma", "Lymphoma"],
+    "answer": "Adenoma"
+  },
+  {
+    "question": "Edema refers to:",
+    "options": [
+      "Decrease in blood volume",
+      "Accumulation of excess fluid in tissues",
+      "Increase in red blood cells",
+      "Formation of blood clot"
+    ],
+    "answer": "Accumulation of excess fluid in tissues"
+  }
+]

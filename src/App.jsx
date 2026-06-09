@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import cmltPreparationRaw from "../data/cmlt_preparation.json?raw";
+import newQuestionRaw from "../data/newQuestion.json?raw";
 
-const QUIZ_DURATION_SECONDS = 2 * 60 * 60;
+const QUIZ_DURATION_SECONDS = 90 * 60;
 const PREVIEW_LIMIT = 220;
 const PASS_MARK = 70;
 const OPTION_LABELS = ["A", "B", "C", "D"];
-const DATASET_FILES = {
-  cmltPreparation: "/data/cmlt_preparation.json",
+const DATASET_SOURCES = {
+  cmltPreparation: cmltPreparationRaw,
+  newQuestion: newQuestionRaw,
 };
 
-const ACTIVE_SET = "cmltPreparation";
+const ACTIVE_SET = "newQuestion";
 const EXAM_STATE_STORAGE_KEY = "cmlt_exam_state_v1";
 const SUBJECT_MARK_DISTRIBUTION = [
   { sn: "1.", subject: "Clinical Biochemistry", marks: "20%" },
@@ -49,6 +52,15 @@ const parseJsonLines = (rawText) => {
       throw new Error(`Invalid JSON on line ${index + 1}`);
     }
   });
+};
+
+const parseJsonArray = (rawText) => {
+  const parsed = JSON.parse(rawText);
+  if (!Array.isArray(parsed)) {
+    throw new Error("Dataset JSON must be an array");
+  }
+
+  return parsed;
 };
 
 const parsePreparationRows = (rawText) => {
@@ -98,30 +110,42 @@ const parseDatasetRows = (rawText, setName) => {
     return parsePreparationRows(rawText);
   }
 
+  if (setName === "newQuestion") {
+    return parseJsonArray(rawText);
+  }
+
   return parseJsonLines(rawText);
 };
 
 const fetchDataset = async (name) => {
-  const url = DATASET_FILES[name];
-  if (!url) throw new Error(`Unknown dataset: ${name}`);
-  const response = await fetch(url);
-  if (!response.ok)
-    throw new Error(`Could not load ${name}.json (${response.status})`);
-  return response.text();
+  const rawText = DATASET_SOURCES[name];
+  if (!rawText) throw new Error(`Unknown dataset: ${name}`);
+  return rawText;
 };
 
 const createQuizData = (rows) => {
   const cleanedRows = rows
     .map((row) => {
       const question = trimText(row.question);
-      const options = [row.opa, row.opb, row.opc, row.opd].map(trimText);
-      const answerIndex = Number(row.cop) - 1;
+      const hasOptionsArray = Array.isArray(row.options);
+      const options = hasOptionsArray
+        ? row.options.slice(0, 4).map(trimText)
+        : [row.opa, row.opb, row.opc, row.opd].map(trimText);
+
+      let answerIndex = Number(row.cop) - 1;
+      if (
+        hasOptionsArray &&
+        (!Number.isInteger(answerIndex) || answerIndex < 0 || answerIndex > 3)
+      ) {
+        const answerText = trimText(row.answer);
+        answerIndex = options.findIndex((option) => option === answerText);
+      }
 
       return {
         question,
         options,
         answerIndex,
-        category: trimText(row.subject_name) || "general",
+        category: trimText(row.subject_name || row.category) || "general",
       };
     })
     .filter((row) => {
@@ -214,7 +238,7 @@ function App() {
         const rows = parseDatasetRows(rawData, ACTIVE_SET);
         const generatedQuiz = createQuizData(rows);
         if (generatedQuiz.length === 0) {
-          throw new Error("No usable questions found in cmlt_preparation.json");
+          throw new Error("No usable questions found in selected dataset");
         }
 
         if (!isCancelled) {
@@ -382,7 +406,7 @@ function App() {
       <main className="app-shell">
         <section className="quiz-card result-card">
           <p className="eyebrow">Loading</p>
-          <h1>Preparing questions from cmlt_preparation.json...</h1>
+          <h1>Preparing questions from newQuestion.json...</h1>
         </section>
       </main>
     );
@@ -580,7 +604,7 @@ function App() {
               Total questions: <strong>{quizData.length}</strong>
             </p>
             <p>
-              Duration: <strong>2 hours</strong>
+              Duration: <strong>1 hour 30 minutes</strong>
             </p>
             <p>
               Pass mark: <strong>{PASS_MARK}%</strong> (below {PASS_MARK}% is
