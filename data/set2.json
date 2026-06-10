@@ -1,0 +1,837 @@
+[
+  {
+    "question": "The primary site of hematopoiesis in a healthy adult is the:",
+    "options": ["Liver", "Spleen", "Red bone marrow", "Lymph nodes"],
+    "answer": "Red bone marrow"
+  },
+  {
+    "question": "Which parameter measures the variation in red blood cell size (anisocytosis)?",
+    "options": ["PCV", "RDW", "MCH", "MCV"],
+    "answer": "RDW"
+  },
+  {
+    "question": "The standard ratio of liquid sodium citrate to blood for ESR estimation by the Westergren method is:",
+    "options": ["1:4", "4:1", "1:9", "9:1"],
+    "answer": "1:4"
+  },
+  {
+    "question": "Which type of white blood cell is responsible for producing antibodies?",
+    "options": ["Neutrophil", "Eosinophil", "B-Lymphocyte", "Monocyte"],
+    "answer": "B-Lymphocyte"
+  },
+  {
+    "question": "Heinz bodies are inclusions made of:",
+    "options": [
+      "Denatured hemoglobin",
+      "Precipitated RNA",
+      "Nuclear remnants",
+      "Iron aggregates"
+    ],
+    "answer": "Denatured hemoglobin"
+  },
+  {
+    "question": "What is the correction formula for Total Leukocyte Count (TLC) when nucleated RBCs (nRBCs) are seen on a blood film?",
+    "options": [
+      "(Observed WBC * 100) / (100 + nRBC per 100 WBC)",
+      "(Observed WBC * nRBC) / 100",
+      "(Observed WBC + nRBC) * 100",
+      "(Observed WBC * 100) / nRBC"
+    ],
+    "answer": "(Observed WBC * 100) / (100 + nRBC per 100 WBC)"
+  },
+  {
+    "question": "Which component of Leishman's stain is responsible for staining nuclear features and basophilic structures?",
+    "options": ["Eosin", "Methylene blue", "Acetone", "Glycerol"],
+    "answer": "Methylene blue"
+  },
+  {
+    "question": "The normal life span of a mature human blood platelet in circulation is roughly:",
+    "options": ["120 days", "10 to 12 hours", "7 to 10 days", "30 days"],
+    "answer": "7 to 10 days"
+  },
+  {
+    "question": "Which of the following values represents a normal Packed Cell Volume (PCV) for an adult male?",
+    "options": ["20% - 30%", "40% - 54%", "30% - 38%", "60% - 70%"],
+    "answer": "40% - 54%"
+  },
+  {
+    "question": "In a manual platelet count using an Improved Neubauer chamber, blood is diluted with:",
+    "options": [
+      "Turk’s fluid",
+      "1% Ammonium oxalate",
+      "Normal saline",
+      "Hayem’s fluid"
+    ],
+    "answer": "1% Ammonium oxalate"
+  },
+  {
+    "question": "The coagulation test 'APTT' is primarily used to monitor therapy with which drug?",
+    "options": ["Warfarin", "Aspirin", "Unfractionated Heparin", "Vitamin K"],
+    "answer": "Unfractionated Heparin"
+  },
+  {
+    "question": "Vitamin K is essential for the hepatic synthesis of which group of clotting factors?",
+    "options": [
+      "Factors I, II, V, and X",
+      "Factors II, VII, IX, and X",
+      "Factors VIII, IX, XI, and XII",
+      "Factors XIII, VIII, and I"
+    ],
+    "answer": "Factors II, VII, IX, and X"
+  },
+  {
+    "question": "Which red blood cell index is calculated using the formula: (Hb [g/dL] / PCV [%]) * 100?",
+    "options": ["MCV", "MCH", "MCHC", "RDW"],
+    "answer": "MCHC"
+  },
+  {
+    "question": "Howell-Jolly bodies are nuclear remnants made of:",
+    "options": ["Iron", "DNA", "RNA", "Lipids"],
+    "answer": "DNA"
+  },
+  {
+    "question": "Thalassemia is a genetic disorder characterized by a defect in:",
+    "options": [
+      "Heme synthesis",
+      "Iron absorption",
+      "Globin chain synthesis",
+      "Vitamin B12 utilization"
+    ],
+    "answer": "Globin chain synthesis"
+  },
+  {
+    "question": "The specific leukocyte that transitions into a macrophage when it enters body tissue is the:",
+    "options": ["Basophil", "Lymphocyte", "Monocyte", "Neutrophil"],
+    "answer": "Monocyte"
+  },
+  {
+    "question": "What color is the grid area under the microscope when performing a manual cell count using a Neubauer chamber?",
+    "options": [
+      "Clear with dark lines",
+      "Red with white lines",
+      "Opaque green",
+      "Blue with yellow lines"
+    ],
+    "answer": "Clear with dark lines"
+  },
+  {
+    "question": "Which of the following leads to a false increase in ESR value?",
+    "options": [
+      "Polycythemia",
+      "Tilting of the ESR tube",
+      "Use of cold blood sample",
+      "Microcytosis"
+    ],
+    "answer": "Tilting of the ESR tube"
+  },
+  {
+    "question": "The specific granule matrix of base-loving leukocytes (Basophils) contains rich stores of:",
+    "options": [
+      "Hemoglobin",
+      "Alkaline phosphatase",
+      "Histamine and Heparin",
+      "Myeloperoxidase"
+    ],
+    "answer": "Histamine and Heparin"
+  },
+  {
+    "question": "Bleeding time (BT) tracks the functionality of:",
+    "options": [
+      "Intrinsic coagulation factors",
+      "Extrinsic coagulation pathway",
+      "Platelets and vascular response",
+      "Fibrin stabilizing factor"
+    ],
+    "answer": "Platelets and vascular response"
+  },
+  {
+    "question": "Which morphological type of anemia is caused by a dietary deficiency of Folate or Vitamin B12?",
+    "options": [
+      "Microcytic, hypochromic anemia",
+      "Macrocytic, megaloblastic anemia",
+      "Normocytic, normochromic anemia",
+      "Hemolytic anemia"
+    ],
+    "answer": "Macrocytic, megaloblastic anemia"
+  },
+  {
+    "question": "The automated calculation method for hemoglobin estimation in most modern hematology analyzers uses:",
+    "options": [
+      "Visual color tracking",
+      "Sodium lauryl sulfate (SLS) or cyanmethemoglobin method via spectrophotometry",
+      "Direct electrical impedance",
+      "Laser light scattering detection"
+    ],
+    "answer": "Sodium lauryl sulfate (SLS) or cyanmethemoglobin method via spectrophotometry"
+  },
+  {
+    "question": "When blood is collected in an EDTA tube, what is the maximum recommended time to make a blood smear?",
+    "options": [
+      "Within 2 to 3 hours",
+      "Within 24 hours",
+      "Within 48 hours",
+      "Immediately within 5 minutes only"
+    ],
+    "answer": "Within 2 to 3 hours"
+  },
+  {
+    "question": "Which parameter is a characteristic finding in a patient with classic Aplastic Anemia?",
+    "options": [
+      "Isolated leukocytosis",
+      "Reticulocytosis",
+      "Hypocellular bone marrow",
+      "Erythroid hyperplasia"
+    ],
+    "answer": "Hypocellular bone marrow"
+  },
+  {
+    "question": "Splenomegaly or advanced liver disease can cause a reduction in blood platelet levels known as:",
+    "options": [
+      "Thrombocythemia",
+      "Leukopenia",
+      "Thrombocytopenia",
+      "Granulocytosis"
+    ],
+    "answer": "Thrombocytopenia"
+  },
+  {
+    "question": "Forward grouping (cell grouping) is used to identify:",
+    "options": [
+      "Antibodies in serum using known red cells",
+      "Antigens on red blood cells using known antisera",
+      "Complement factors in plasma",
+      "Secretor status in saliva"
+    ],
+    "answer": "Antigens on red blood cells using known antisera"
+  },
+  {
+    "question": "What is the main immunologic cause of Hemolytic Transfusion Reactions?",
+    "options": [
+      "Incompatibility between donor antigens and recipient antibodies",
+      "High levels of donor platelets",
+      "Use of sterile normal saline",
+      "Storage of blood at 4°C"
+    ],
+    "answer": "Incompatibility between donor antigens and recipient antibodies"
+  },
+  {
+    "question": "An individual with blood group 'AB' possesses which antibodies in their serum?",
+    "options": [
+      "Anti-A only",
+      "Anti-B only",
+      "Both Anti-A and Anti-B",
+      "Neither Anti-A nor Anti-B"
+    ],
+    "answer": "Neither Anti-A nor Anti-B"
+  },
+  {
+    "question": "The main purpose of the Indirect Antiglobulin Test (IAT) in a blood bank is to detect:",
+    "options": [
+      "Red cells coated with antibodies in vivo",
+      "In-vitro unexpected circulating red cell antibodies in serum",
+      "Total serum complement activity",
+      "Bacterial contamination of blood units"
+    ],
+    "answer": "In-vitro unexpected circulating red cell antibodies in serum"
+  },
+  {
+    "question": "Commercial Forward Blood Grouping Anti-Sera A is color-coded:",
+    "options": ["Yellow", "Blue", "Clear/Colorless", "Green"],
+    "answer": "Blue"
+  },
+  {
+    "question": "Chemical compound used as a high-potency enhancement medium during crossmatching to speed up antibody-antigen binding?",
+    "options": [
+      "Distilled water",
+      "22% Bovine Serum Albumin (BSA)",
+      "Acid alcohol",
+      "Hydrochloric acid"
+    ],
+    "answer": "22% Bovine Serum Albumin (BSA)"
+  },
+  {
+    "question": "The natural antibody isotype found in salivary secretions, colostrum, and mucosal tracts is:",
+    "options": ["IgD", "IgE", "IgA", "IgG"],
+    "answer": "IgA"
+  },
+  {
+    "question": "Fresh Frozen Plasma (FFP) units must be stored continuously at what optimal temperature?",
+    "options": ["2°C to 6°C", "-18°C or colder", "20°C to 24°C", "Exactly 0°C"],
+    "answer": "-18°C or colder"
+  },
+  {
+    "question": "The Widal test uses the principle of bacterial agglutination to help diagnose:",
+    "options": [
+      "Tuberculosis",
+      "Typoid (Enteric) fever",
+      "Syphilis",
+      "Brucellosis"
+    ],
+    "answer": "Typoid (Enteric) fever"
+  },
+  {
+    "question": "Rh blood grouping antigens are structurally made of:",
+    "options": [
+      "Carbohydrates",
+      "Lipoproteins/Proteins",
+      "Pure RNA chains",
+      "Glycolipids"
+    ],
+    "answer": "Lipoproteins/Proteins"
+  },
+  {
+    "question": "Platelet concentrates must be stored at what temperature with continuous agitation?",
+    "options": ["2°C to 6°C", "-20°C", "20°C to 24°C", "37°C"],
+    "answer": "20°C to 24°C"
+  },
+  {
+    "question": "Which blood components can be gathered from a single donor blood unit by using a centrifuge?",
+    "options": [
+      "Packed RBCs, PRPs, and FFP",
+      "Serum and pure glucose",
+      "Whole white cells only",
+      "Fibrin cords and thrombin liquid"
+    ],
+    "answer": "Packed RBCs, PRPs, and FFP"
+  },
+  {
+    "question": "The primary antibody involved in Type I immediate hypersensitivity reactions (allergic reactions) is:",
+    "options": ["IgG", "IgM", "IgE", "IgD"],
+    "answer": "IgE"
+  },
+  {
+    "question": "In a major crossmatch, what components are mixed together?",
+    "options": [
+      "Donor serum and Recipient red cells",
+      "Donor red cells and Recipient serum",
+      "Donor red cells and Recipient red cells",
+      "Donor plasma and Recipient plasma"
+    ],
+    "answer": "Donor red cells and Recipient serum"
+  },
+  {
+    "question": "The zone where antigen and antibody concentrations are optimally balanced to form a visible lattice precipitate is the:",
+    "options": [
+      "Prozone area",
+      "Postzone area",
+      "Zone of equivalence",
+      "Pro-equivalence zone"
+    ],
+    "answer": "Zone of equivalence"
+  },
+  {
+    "question": "The standard colorimetric chemical assay for serum cholesterol tracking is the:",
+    "options": [
+      "Jaffe method",
+      "Biuret method",
+      "CHOD-PAP enzymatic method",
+      "GOD-POD method"
+    ],
+    "answer": "CHOD-PAP enzymatic method"
+  },
+  {
+    "question": "The protein concentration estimation standard used routinely in biochemical profiling depends on the:",
+    "options": [
+      "DAM method",
+      "Biuret method",
+      "Caraway method",
+      "Folin-Wu method"
+    ],
+    "answer": "Biuret method"
+  },
+  {
+    "question": "Which of the following is an example of a monosaccharide hexose sugar?",
+    "options": ["Sucrose", "Maltose", "Galactose", "Stachyose"],
+    "answer": "Galactose"
+  },
+  {
+    "question": "Glycogenesis is the metabolic process that converts:",
+    "options": [
+      "Glucose into Glycogen",
+      "Glycogen into Pyruvate",
+      "Proteins into Glucose",
+      "Glucose into Lactate"
+    ],
+    "answer": "Glucose into Glycogen"
+  },
+  {
+    "question": "For a fasting blood sugar (FBS) sample, blood is collected in a tube containing:",
+    "options": [
+      "EDTA",
+      "Sodium Citrate",
+      "Sodium Fluoride and Potassium Oxalate",
+      "Lithium Heparin"
+    ],
+    "answer": "Sodium Fluoride and Potassium Oxalate"
+  },
+  {
+    "question": "Under aerobic conditions, the total theoretical net yield of ATP from the complete oxidation of one mole of glucose is:",
+    "options": ["2 ATP", "8 ATP", "36 to 38 ATP", "12 ATP"],
+    "answer": "36 to 38 ATP"
+  },
+  {
+    "question": "Creatinine clearance is an direct functional assessment tool for evaluating:",
+    "options": [
+      "Liver detoxification efficiency",
+      "Glomerular filtration rate (GFR) of the kidneys",
+      "Pancreatic juice output",
+      "Cardiac muscle recovery"
+    ],
+    "answer": "Glomerular filtration rate (GFR) of the kidneys"
+  },
+  {
+    "question": "Jaffe’s reaction uses which acid compound to form an orange-red color complex with creatinine?",
+    "options": [
+      "Sulfuric acid",
+      "Picric acid",
+      "Hydrochloric acid",
+      "Acetic acid"
+    ],
+    "answer": "Picric acid"
+  },
+  {
+    "question": "Serum uric acid values are highly elevated in patients with which metabolic joint disorder?",
+    "options": [
+      "Rheumatoid arthritis",
+      "Osteoarthritis",
+      "Gout",
+      "Osteoporosis"
+    ],
+    "answer": "Gout"
+  },
+  {
+    "question": "Blood glucose levels are mainly lowered by which hormone?",
+    "options": ["Glucagon", "Cortisol", "Epinephrine", "Insulin"],
+    "answer": "Insulin"
+  },
+  {
+    "question": "Which enzyme is a key biomarker for diagnosing bone mineralization issues or obstructive liver diseases?",
+    "options": [
+      "Acid Phosphatase (ACP)",
+      "Alkaline Phosphatase (ALP)",
+      "Lactate Dehydrogenase (LDH)",
+      "Amylase"
+    ],
+    "answer": "Alkaline Phosphatase (ALP)"
+  },
+  {
+    "question": "The normal reference level for Fasting Blood Sugar (FBS) in a healthy adult is:",
+    "options": [
+      "70 - 100 mg/dL",
+      "140 - 200 mg/dL",
+      "40 - 60 mg/dL",
+      "200 - 250 mg/dL"
+    ],
+    "answer": "70 - 100 mg/dL"
+  },
+  {
+    "question": "Which lipoprotein clears cholesterol from peripheral tissues and transports it back to the liver?",
+    "options": ["Chylomicrons", "LDL", "VLDL", "HDL"],
+    "answer": "HDL"
+  },
+  {
+    "question": "The standard wavelength used to read the purple color of a Biuret total protein assay is:",
+    "options": ["340 nm", "540 nm", "630 nm", "405 nm"],
+    "answer": "540 nm"
+  },
+  {
+    "question": "Which serum enzyme elevation is a highly specific marker for an acute myocardial infarction (heart attack)?",
+    "options": [
+      "Alanine Aminotransferase (ALT)",
+      "Alkaline Phosphatase (ALP)",
+      "Creatine Kinase-MB (CK-MB)",
+      "Amylase"
+    ],
+    "answer": "Creatine Kinase-MB (CK-MB)"
+  },
+  {
+    "question": "Carcinoembryonic Antigen (CEA) is used primarily as a tumor marker to monitor:",
+    "options": [
+      "Prostate carcinoma",
+      "Colorectal cancer",
+      "Choriocarcinoma",
+      "Hepatocellular carcinoma"
+    ],
+    "answer": "Colorectal cancer"
+  },
+  {
+    "question": "Essential amino acids are defined as those that:",
+    "options": [
+      "Are synthesized in large amounts by the liver",
+      "Cannot be synthesized by the body and must be obtained from food",
+      "Contain no nitrogen atoms",
+      "Are converted directly into storage fats"
+    ],
+    "answer": "Cannot be synthesized by the body and must be obtained from food"
+  },
+  {
+    "question": "Scurvy is a deficiency disease caused by a lack of:",
+    "options": ["Vitamin A", "Vitamin B1", "Vitamin C", "Vitamin D"],
+    "answer": "Vitamin C"
+  },
+  {
+    "question": "Which structural element inside human cells is responsible for protein synthesis?",
+    "options": ["Mitochondria", "Lysosome", "Ribosome", "Centrosome"],
+    "answer": "Ribosome"
+  },
+  {
+    "question": "The breakdown of fatty acids to produce energy is called:",
+    "options": ["Beta-oxidation", "Glycolysis", "Lipogenesis", "Ketogenesis"],
+    "answer": "Beta-oxidation"
+  },
+  {
+    "question": "Which structural cellular component holds digestive enzymes and is known as the 'suicidal bag'?",
+    "options": [
+      "Golgi apparatus",
+      "Lysosome",
+      "Peroxisome",
+      "Endoplasmic reticulum"
+    ],
+    "answer": "Lysosome"
+  },
+  {
+    "question": "Adrenocorticotropic Hormone (ACTH) is secreted by the:",
+    "options": [
+      "Hypothalamus",
+      "Posterior pituitary gland",
+      "Anterior pituitary gland",
+      "Adrenal cortex"
+    ],
+    "answer": "Anterior pituitary gland"
+  },
+  {
+    "question": "Maltose is a disaccharide composed of:",
+    "options": [
+      "Glucose + Fructose",
+      "Glucose + Galactose",
+      "Glucose + Glucose",
+      "Fructose + Galactose"
+    ],
+    "answer": "Glucose + Glucose"
+  },
+  {
+    "question": "Which vitamin is also known as Cyanocobalamin?",
+    "options": ["Vitamin B1", "Vitamin B6", "Vitamin B12", "Vitamin B2"],
+    "answer": "Vitamin B12"
+  },
+  {
+    "question": "A clear, straw-colored liquid that separates from blood after it is allowed to clot is called:",
+    "options": ["Plasma", "Whole blood matrix", "Serum", "Buffy coat fluid"],
+    "answer": "Serum"
+  },
+  {
+    "question": "What is the standard method used for disk diffusion antimicrobial susceptibility testing?",
+    "options": [
+      "Lowenstein-Jensen method",
+      "Kirby-Bauer method",
+      "Ziehl-Neelsen method",
+      "Jaffe method"
+    ],
+    "answer": "Kirby-Bauer method"
+  },
+  {
+    "question": "Which of the following bacteria shows a characteristic 'green metallic sheen' on Eosin Methylene Blue (EMB) agar?",
+    "options": [
+      "Pseudomonas aeruginosa",
+      "Escherichia coli",
+      "Salmonella Typhi",
+      "Klebsiella pneumoniae"
+    ],
+    "answer": "Escherichia coli"
+  },
+  {
+    "question": "The primary cell wall component that differentiates Gram-positive bacteria from Gram-negative bacteria is:",
+    "options": [
+      "Lipopolysaccharide layer",
+      "Peptidoglycan layer thickness",
+      "Cytoplasmic membrane matrix",
+      "Presence of flagella"
+    ],
+    "answer": "Peptidoglycan layer thickness"
+  },
+  {
+    "question": "Lowenstein-Jensen (LJ) medium is a specialized selective medium used to grow:",
+    "options": [
+      "Staphylococcus aureus",
+      "Mycobacterium tuberculosis",
+      "Neisseria meningitidis",
+      "Vibrio cholerae"
+    ],
+    "answer": "Mycobacterium tuberculosis"
+  },
+  {
+    "question": "What is the concentration of sheep blood typically added to prepare a standard Blood Agar plate?",
+    "options": ["1% to 2%", "5% to 10%", "20%", "0.5%"],
+    "answer": "5% to 10%"
+  },
+  {
+    "question": "In the Gram staining procedure, acetone-alcohol acts as a:",
+    "options": ["Counterstain", "Primary stain", "Decolorizer", "Mordant"],
+    "answer": "Decolorizer"
+  },
+  {
+    "question": "Which bacteria displays an 'inverted Christmas tree' growth pattern in gelatin stab cultures?",
+    "options": [
+      "Bacillus anthracis",
+      "Streptococcus pyogenes",
+      "Clostridium tetani",
+      "Corynebacterium diphtheriae"
+    ],
+    "answer": "Bacillus anthracis"
+  },
+  {
+    "question": "The diagnostic test that checks for the presence of the enzyme catalase is used to differentiate:",
+    "options": [
+      "Staphylococcus (positive) from Streptococcus (negative)",
+      "E. coli from Proteus",
+      "Neisseria from Moraxella",
+      "Gram-positive from Gram-negative bacteria"
+    ],
+    "answer": "Staphylococcus (positive) from Streptococcus (negative)"
+  },
+  {
+    "question": "The standard autoclave parameter for routine sterilization of culture media is:",
+    "options": [
+      "100°C for 30 minutes",
+      "121°C at 15 lbs pressure for 15 minutes",
+      "160°C for 2 hours",
+      "115°C at 10 lbs pressure for 45 minutes"
+    ],
+    "answer": "121°C at 15 lbs pressure for 15 minutes"
+  },
+  {
+    "question": "What is the counterstain used in the Ziehl-Neelsen (Acid-Fast) staining method?",
+    "options": [
+      "Safranin",
+      "Methylene blue (or Malachite green)",
+      "Crystal violet",
+      "Carbol fuchsin"
+    ],
+    "answer": "Methylene blue (or Malachite green)"
+  },
+  {
+    "question": "The major causative agent of Hydatid cyst disease in humans is:",
+    "options": [
+      "Taenia solium",
+      "Echinococcus granulosus",
+      "Ascaris lumbricoides",
+      "Fasciola hepatica"
+    ],
+    "answer": "Echinococcus granulosus"
+  },
+  {
+    "question": "The infective stage of Plasmodium parasites that is injected into humans by an infected female Anopheles mosquito is the:",
+    "options": ["Trophozoite", "Merozoite", "Sporozoite", "Gametocyte"],
+    "answer": "Sporozoite"
+  },
+  {
+    "question": "Microscopic inspection of a stool sample shows an asymmetric ovum that is flat on one side with a visible larval form inside. This is typical for:",
+    "options": [
+      "Enterobius vermicularis (Pinworm)",
+      "Trichuris trichiura (Whipworm)",
+      "Ancylostoma duodenale (Hookworm)",
+      "Taenia saginata"
+    ],
+    "answer": "Enterobius vermicularis (Pinworm)"
+  },
+  {
+    "question": "Sleeping sickness (African Trypanosomiasis) is transmitted to humans through the bite of the:",
+    "options": ["Sandfly", "Tsetse fly", "Anopheles mosquito", "Blackfly"],
+    "answer": "Tsetse fly"
+  },
+  {
+    "question": "Schüffner's dots are seen in red blood cells infected with which parasite?",
+    "options": [
+      "Plasmodium falciparum",
+      "Plasmodium vivax",
+      "Plasmodium malariae",
+      "Cryptosporidium parvum"
+    ],
+    "answer": "Plasmodium vivax"
+  },
+  {
+    "question": "Which parasite is an intestinal flagellate that has a classic 'falling leaf' motility in fresh wet-mount stool samples?",
+    "options": [
+      "Entamoeba histolytica",
+      "Giardia lamblia",
+      "Trichomonas vaginalis",
+      "Balantidium coli"
+    ],
+    "answer": "Giardia lamblia"
+  },
+  {
+    "question": "The standard technique used to detect DNA targets in a molecular diagnostic lab is:",
+    "options": [
+      "Western Blotting",
+      "Northern Blotting",
+      "Southern Blotting",
+      "Eastern Blotting"
+    ],
+    "answer": "Southern Blotting"
+  },
+  {
+    "question": "Which of the following organisms is a highly relevant yeast-like fungus that forms blastoconidia and pseudohyphae?",
+    "options": [
+      "Aspergillus niger",
+      "Candida albicans",
+      "Penicillium notatum",
+      "Rhizopus stolonifer"
+    ],
+    "answer": "Candida albicans"
+  },
+  {
+    "question": "Viruses can replicate and grow only:",
+    "options": [
+      "On Nutrient Agar plates",
+      "In blood clots",
+      "Inside living host cells",
+      "In synthetic sugar broths"
+    ],
+    "answer": "Inside living host cells"
+  },
+  {
+    "question": "The localized accumulation of Mycobacterium leprae within skin tissues often creates a distinctive arrangement described as:",
+    "options": [
+      "Chinese letter pattern",
+      "Bamboo stick arrangement",
+      "Globi or 'cigar-bundle' clusters",
+      "Chain-link clusters"
+    ],
+    "answer": "Globi or 'cigar-bundle' clusters"
+  },
+  {
+    "question": "Thiosulfate Citrate Bile Salts Sucrose (TCBS) agar is a selective medium designed to culture:",
+    "options": [
+      "Salmonella Typhi",
+      "Vibrio cholerae",
+      "Shigella dysenteriae",
+      "Pseudomonas aeruginosa"
+    ],
+    "answer": "Vibrio cholerae"
+  },
+  {
+    "question": "The Kovac’s reagent is used in biochemical profiling to track the production of:",
+    "options": ["Hydrogen sulfide gas", "Indole", "Acetoin", "Urease"],
+    "answer": "Indole"
+  },
+  {
+    "question": "An organism that grows and multiplies only in the complete absence of free molecular oxygen is an:",
+    "options": [
+      "Obligate aerobe",
+      "Obligate anaerobe",
+      "Facultative anaerobe",
+      "Microaerophile"
+    ],
+    "answer": "Obligate anaerobe"
+  },
+  {
+    "question": "The structural part of a bacterial cell that gives it resistance to heat, dehydration, and chemicals is the:",
+    "options": ["Flagellum", "Capsule", "Endospore", "Plasma membrane"],
+    "answer": "Endospore"
+  },
+  {
+    "question": "Microscopic inspection of Corynebacterium diphtheriae stained with Albert's stain reveals:",
+    "options": [
+      "Red capsules",
+      "Metachromatic (Volutin) granules staining bluish-black",
+      "Green acid-fast walls",
+      "Spores at the end of the cells"
+    ],
+    "answer": "Metachromatic (Volutin) granules staining bluish-black"
+  },
+  {
+    "question": "Benedict’s test is performed on urine samples to screen for the presence of:",
+    "options": [
+      "Proteins",
+      "Reducing substances/Sugars",
+      "Ketone bodies",
+      "Bile salts"
+    ],
+    "answer": "Reducing substances/Sugars"
+  },
+  {
+    "question": "Hay’s sulfur powder test is a clinical screening method used to track the presence of:",
+    "options": [
+      "Bile pigments",
+      "Bile salts",
+      "Bence-Jones proteins",
+      "Glucose"
+    ],
+    "answer": "Bile salts"
+  },
+  {
+    "question": "The microscopic presence of 'envelope-shaped' crystals in an acidic urine sediment sample indicates:",
+    "options": [
+      "Triple phosphate crystals",
+      "Calcium oxalate crystals",
+      "Uric acid crystals",
+      "Cystine crystals"
+    ],
+    "answer": "Calcium oxalate crystals"
+  },
+  {
+    "question": "The universally used compound fixative for routine surgical biopsy tissues in histopathology is:",
+    "options": [
+      "Carnoy’s fluid",
+      "10% Neutral Buffered Formalin",
+      "Bouin’s fluid",
+      "Absolute acetone"
+    ],
+    "answer": "10% Neutral Buffered Formalin"
+  },
+  {
+    "question": "The primary purpose of tissue processing step called 'Clearing' is to:",
+    "options": [
+      "Remove calcium ions from the matrix",
+      "Remove alcohol and make the tissue miscible with paraffin wax",
+      "Submerge the tissue block into water",
+      "Dehydrate the fresh tissue specimen"
+    ],
+    "answer": "Remove alcohol and make the tissue miscible with paraffin wax"
+  },
+  {
+    "question": "The melting point operating range of standard paraffin wax used for block embedding is:",
+    "options": [
+      "37°C to 40°C",
+      "56°C to 58°C",
+      "80°C to 95°C",
+      "Exactly 100°C"
+    ],
+    "answer": "56°C to 58°C"
+  },
+  {
+    "question": "The knife angle setting on a rotary microtome relative to the block face (clearance angle) is ideally:",
+    "options": ["0°", "3° to 8°", "30° to 45°", "90°"],
+    "answer": "3° to 8°"
+  },
+  {
+    "question": "In the routine Hematoxylin and Eosin (H&E) staining method, Hematoxylin acts as a:",
+    "options": [
+      "Cytoplasmic basic dye that stains structures pink",
+      "Nuclear stain that colors acidic structures blue/purple",
+      "Clearing chemical medium",
+      "Decalcifier agent"
+    ],
+    "answer": "Nuclear stain that colors acidic structures blue/purple"
+  },
+  {
+    "question": "Exfoliative cytology smears (such as a Pap smear) are fixed immediately using:",
+    "options": [
+      "10% Formalin liquid",
+      "95% Ethyl alcohol",
+      "Glutaraldehyde solution",
+      "Xylene fluid"
+    ],
+    "answer": "95% Ethyl alcohol"
+  },
+  {
+    "question": "Honey or egg albumin mixed with glycerol is used in histopathology as a:",
+    "options": [
+      "Tissue clearing oil",
+      "Decalcifying fluid formula",
+      "Section adhesive for mounting tissue sections onto glass slides",
+      "Dehydrating solvent"
+    ],
+    "answer": "Section adhesive for mounting tissue sections onto glass slides"
+  }
+]

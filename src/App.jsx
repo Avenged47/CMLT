@@ -3,6 +3,7 @@ import "./App.css";
 import cmltPreparationRaw from "../data/cmlt_preparation.json?raw";
 import newQuestionRaw from "../data/newQuestion.json?raw";
 import eightQuestionsRaw from "../data/8questions.json?raw";
+import set2Raw from "../data/set2.json?raw";
 
 const QUIZ_DURATION_SECONDS = 90 * 60;
 const PREVIEW_LIMIT = 220;
@@ -12,9 +13,10 @@ const DATASET_SOURCES = {
   cmltPreparation: cmltPreparationRaw,
   newQuestion: newQuestionRaw,
   eightQuestions: eightQuestionsRaw,
+  set2: set2Raw,
 };
 
-const ACTIVE_SET = "eightQuestions";
+const ACTIVE_SET = "set2";
 const EXAM_STATE_STORAGE_KEY = "cmlt_exam_state_v1";
 const SUBJECT_MARK_DISTRIBUTION = [
   { sn: "1.", subject: "Clinical Biochemistry", marks: "20%" },
@@ -112,7 +114,11 @@ const parseDatasetRows = (rawText, setName) => {
     return parsePreparationRows(rawText);
   }
 
-  if (setName === "newQuestion" || setName === "eightQuestions") {
+  if (
+    setName === "newQuestion" ||
+    setName === "eightQuestions" ||
+    setName === "set2"
+  ) {
     return parseJsonArray(rawText);
   }
 
