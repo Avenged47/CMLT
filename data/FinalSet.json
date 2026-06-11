@@ -1,0 +1,765 @@
+[
+  {
+    "question": "Which instrument is used to measure the pH of a solution?",
+    "options": ["Colorimeter", "pH meter", "Spectrophotometer", "Centrifuge"],
+    "answer": "pH meter"
+  },
+  {
+    "question": "The normal pH range of human blood is:",
+    "options": ["6.8-7.0", "7.35-7.45", "7.8-8.0", "8.1-8.4"],
+    "answer": "7.35-7.45"
+  },
+  {
+    "question": "The primary purpose of a centrifuge is:",
+    "options": [
+      "Sterilization",
+      "Separation based on density",
+      "Measurement of absorbance",
+      "Incubation"
+    ],
+    "answer": "Separation based on density"
+  },
+  {
+    "question": "RPM stands for:",
+    "options": [
+      "Rotation Per Meter",
+      "Revolutions Per Minute",
+      "Rotations Per Millimeter",
+      "Rate Per Minute"
+    ],
+    "answer": "Revolutions Per Minute"
+  },
+  {
+    "question": "The wavelength is measured in:",
+    "options": ["cm", "mm", "nm", "μg"],
+    "answer": "nm"
+  },
+  {
+    "question": "Beer-Lambert's law states that absorbance is directly proportional to:",
+    "options": [
+      "Temperature",
+      "Concentration and path length",
+      "Pressure",
+      "Volume"
+    ],
+    "answer": "Concentration and path length"
+  },
+  {
+    "question": "The formula for absorbance is:",
+    "options": ["A = log I/I₀", "A = log I₀/I", "A = I/I₀", "A = I₀ × I"],
+    "answer": "A = log I₀/I"
+  },
+  {
+    "question": "The complementary color of blue is:",
+    "options": ["Green", "Yellow", "Orange", "Red"],
+    "answer": "Orange"
+  },
+  {
+    "question": "The complementary color of red is:",
+    "options": ["Blue", "Green", "Yellow", "Orange"],
+    "answer": "Green"
+  },
+  {
+    "question": "Which instrument uses a monochromator to isolate specific wavelengths of light?",
+    "options": ["Water bath", "Spectrophotometer", "Incubator", "Balance"],
+    "answer": "Spectrophotometer"
+  },
+  {
+    "question": "The temperature commonly used for bacterial incubation is:",
+    "options": ["25°C", "30°C", "37°C", "45°C"],
+    "answer": "37°C"
+  },
+  {
+    "question": "A water bath is mainly used for:",
+    "options": [
+      "Dry heating",
+      "Maintaining constant temperature",
+      "Sterilization",
+      "Cooling samples"
+    ],
+    "answer": "Maintaining constant temperature"
+  },
+  {
+    "question": "PCR stands for:",
+    "options": [
+      "Protein Chain Reaction",
+      "Polymerase Chain Reaction",
+      "Polymer Chemical Reaction",
+      "Protein Chemical Replication"
+    ],
+    "answer": "Polymerase Chain Reaction"
+  },
+  {
+    "question": "The enzyme commonly used in PCR is:",
+    "options": ["Amylase", "Taq polymerase", "Urease", "Catalase"],
+    "answer": "Taq polymerase"
+  },
+  {
+    "question": "Which anticoagulant is preferred for hematological investigations?",
+    "options": ["Heparin", "EDTA", "Sodium fluoride", "Oxalate"],
+    "answer": "EDTA"
+  },
+  {
+    "question": "Sodium fluoride is mainly used for preservation of:",
+    "options": ["Urea", "Glucose", "Protein", "Bilirubin"],
+    "answer": "Glucose"
+  },
+  {
+    "question": "The pH of a neutral solution is:",
+    "options": ["0", "5", "7", "14"],
+    "answer": "7"
+  },
+  {
+    "question": "An acid is a substance that:",
+    "options": [
+      "Accepts H⁺ ions",
+      "Releases H⁺ ions",
+      "Releases OH⁻ ions",
+      "Accepts electrons only"
+    ],
+    "answer": "Releases H⁺ ions"
+  },
+  {
+    "question": "Neutralization is the reaction between:",
+    "options": [
+      "Acid and acid",
+      "Base and base",
+      "Acid and base",
+      "Salt and water"
+    ],
+    "answer": "Acid and base"
+  },
+  {
+    "question": "Electrophoresis is used for separation of substances based on:",
+    "options": ["Density", "Color", "Electrical charge", "Boiling point"],
+    "answer": "Electrical charge"
+  },
+
+  {
+    "question": "Erythropoietin is mainly produced by the:",
+    "options": ["Liver", "Kidney", "Spleen", "Bone marrow"],
+    "answer": "Kidney"
+  },
+  {
+    "question": "The average life span of a normal red blood cell is:",
+    "options": ["60 days", "90 days", "120 days", "180 days"],
+    "answer": "120 days"
+  },
+  {
+    "question": "The normal hemoglobin concentration in adult females is:",
+    "options": ["8-12 g/dL", "10-14 g/dL", "12-16 g/dL", "15-20 g/dL"],
+    "answer": "12-16 g/dL"
+  },
+  {
+    "question": "Which abnormal hemoglobin is predominantly present in sickle cell anemia?",
+    "options": ["HbA", "HbA2", "HbF", "HbS"],
+    "answer": "HbS"
+  },
+  {
+    "question": "The most common cause of microcytic hypochromic anemia is:",
+    "options": [
+      "Iron deficiency",
+      "Vitamin B12 deficiency",
+      "Folic acid deficiency",
+      "Hemolysis"
+    ],
+    "answer": "Iron deficiency"
+  },
+  {
+    "question": "Polycythemia refers to an increase in:",
+    "options": [
+      "Platelets",
+      "White blood cells",
+      "Red blood cells",
+      "Plasma proteins"
+    ],
+    "answer": "Red blood cells"
+  },
+  {
+    "question": "The normal Total Leukocyte Count (TLC) in adults is:",
+    "options": [
+      "1,000-4,000/mm³",
+      "4,000-11,000/mm³",
+      "12,000-20,000/mm³",
+      "20,000-30,000/mm³"
+    ],
+    "answer": "4,000-11,000/mm³"
+  },
+  {
+    "question": "Leukocytosis means:",
+    "options": [
+      "Decrease in RBC count",
+      "Increase in WBC count",
+      "Decrease in platelet count",
+      "Increase in ESR"
+    ],
+    "answer": "Increase in WBC count"
+  },
+  {
+    "question": "Which leukocyte is primarily involved in parasitic infections?",
+    "options": ["Neutrophil", "Lymphocyte", "Monocyte", "Eosinophil"],
+    "answer": "Eosinophil"
+  },
+  {
+    "question": "Acute leukemia is characterized by proliferation of:",
+    "options": ["Mature cells", "Blast cells", "Reticulocytes", "Plasma cells"],
+    "answer": "Blast cells"
+  },
+  {
+    "question": "Factor VIII deficiency causes:",
+    "options": [
+      "Hemophilia A",
+      "Hemophilia B",
+      "von Willebrand disease",
+      "DIC"
+    ],
+    "answer": "Hemophilia A"
+  },
+  {
+    "question": "The normal bleeding time by Ivy method is approximately:",
+    "options": ["1-3 minutes", "2-7 minutes", "10-15 minutes", "15-20 minutes"],
+    "answer": "2-7 minutes"
+  },
+  {
+    "question": "The anticoagulant used for ESR estimation by Westergren method is:",
+    "options": ["EDTA", "Heparin", "Sodium citrate", "Oxalate"],
+    "answer": "Sodium citrate"
+  },
+  {
+    "question": "EDTA prevents clotting by:",
+    "options": [
+      "Destroying platelets",
+      "Chelating calcium",
+      "Activating fibrinogen",
+      "Inhibiting thrombin"
+    ],
+    "answer": "Chelating calcium"
+  },
+  {
+    "question": "The stain most commonly used for peripheral blood smear examination is:",
+    "options": [
+      "Gram stain",
+      "Leishman stain",
+      "Ziehl-Neelsen stain",
+      "PAS stain"
+    ],
+    "answer": "Leishman stain"
+  },
+  {
+    "question": "Reticulocytes are best demonstrated by:",
+    "options": [
+      "Romanowsky stain",
+      "Gram stain",
+      "Supravital stain",
+      "AFB stain"
+    ],
+    "answer": "Supravital stain"
+  },
+  {
+    "question": "The red cell index that indicates average red cell volume is:",
+    "options": ["MCH", "MCHC", "MCV", "RDW"],
+    "answer": "MCV"
+  },
+  {
+    "question": "Flow cytometry is commonly used for:",
+    "options": [
+      "Blood grouping only",
+      "Cell counting and immunophenotyping",
+      "Hemoglobin estimation",
+      "ESR measurement"
+    ],
+    "answer": "Cell counting and immunophenotyping"
+  },
+  {
+    "question": "The principal function of neutrophils is:",
+    "options": [
+      "Antibody production",
+      "Phagocytosis of bacteria",
+      "Histamine release",
+      "Clot formation"
+    ],
+    "answer": "Phagocytosis of bacteria"
+  },
+  {
+    "question": "A blood smear should ideally have a feathered edge that occupies approximately:",
+    "options": [
+      "25% of the slide",
+      "50% of the slide",
+      "75% of the slide",
+      "100% of the slide"
+    ],
+    "answer": "75% of the slide"
+  },
+
+  {
+    "question": "The bacterial cell wall of Gram-positive organisms is primarily composed of:",
+    "options": [
+      "Lipopolysaccharide",
+      "Peptidoglycan",
+      "Mycolic acid",
+      "Chitin"
+    ],
+    "answer": "Peptidoglycan"
+  },
+  {
+    "question": "The process by which bacteria multiply through cell division is called:",
+    "options": ["Budding", "Binary fission", "Conjugation", "Sporulation"],
+    "answer": "Binary fission"
+  },
+  {
+    "question": "The stain used as a counterstain in Gram staining is:",
+    "options": [
+      "Crystal violet",
+      "Methylene blue",
+      "Safranin",
+      "Malachite green"
+    ],
+    "answer": "Safranin"
+  },
+  {
+    "question": "Which culture medium is enriched and commonly used for isolation of fastidious bacteria?",
+    "options": [
+      "Nutrient agar",
+      "MacConkey agar",
+      "Chocolate agar",
+      "Mueller-Hinton agar"
+    ],
+    "answer": "Chocolate agar"
+  },
+  {
+    "question": "The standard method used for antimicrobial susceptibility testing is:",
+    "options": [
+      "Catalase test",
+      "Kirby-Bauer disk diffusion method",
+      "Coagulase test",
+      "Oxidase test"
+    ],
+    "answer": "Kirby-Bauer disk diffusion method"
+  },
+  {
+    "question": "The most effective method of sterilization for culture media is:",
+    "options": ["Boiling", "Autoclaving", "Pasteurization", "Filtration"],
+    "answer": "Autoclaving"
+  },
+  {
+    "question": "The standard condition for autoclaving is:",
+    "options": [
+      "100°C for 15 minutes",
+      "121°C for 15 minutes at 15 psi",
+      "160°C for 1 hour",
+      "180°C for 30 minutes"
+    ],
+    "answer": "121°C for 15 minutes at 15 psi"
+  },
+  {
+    "question": "The bacterial spores are best demonstrated by:",
+    "options": [
+      "Gram stain",
+      "Ziehl-Neelsen stain",
+      "Albert stain",
+      "Schaeffer-Fulton stain"
+    ],
+    "answer": "Schaeffer-Fulton stain"
+  },
+  {
+    "question": "The oxidase test is positive in:",
+    "options": [
+      "Escherichia coli",
+      "Klebsiella pneumoniae",
+      "Pseudomonas aeruginosa",
+      "Shigella dysenteriae"
+    ],
+    "answer": "Pseudomonas aeruginosa"
+  },
+  {
+    "question": "The bacterial species commonly associated with food poisoning due to reheated rice is:",
+    "options": [
+      "Salmonella typhi",
+      "Bacillus cereus",
+      "Staphylococcus epidermidis",
+      "Vibrio cholerae"
+    ],
+    "answer": "Bacillus cereus"
+  },
+  {
+    "question": "Sabouraud Dextrose Agar (SDA) is primarily used for the isolation of:",
+    "options": ["Viruses", "Bacteria", "Fungi", "Protozoa"],
+    "answer": "Fungi"
+  },
+  {
+    "question": "Dermatophytes commonly infect:",
+    "options": ["Bone marrow", "Skin, hair and nails", "Liver", "Blood"],
+    "answer": "Skin, hair and nails"
+  },
+  {
+    "question": "The fungal infection of nails is termed:",
+    "options": [
+      "Tinea capitis",
+      "Tinea corporis",
+      "Onychomycosis",
+      "Tinea cruris"
+    ],
+    "answer": "Onychomycosis"
+  },
+  {
+    "question": "Which of the following is an RNA virus?",
+    "options": [
+      "Hepatitis B virus",
+      "Adenovirus",
+      "Rabies virus",
+      "Papillomavirus"
+    ],
+    "answer": "Rabies virus"
+  },
+  {
+    "question": "The confirmatory test for HIV infection traditionally is:",
+    "options": ["Widal test", "Western blot", "Mantoux test", "VDRL"],
+    "answer": "Western blot"
+  },
+  {
+    "question": "ELISA is based on the detection of:",
+    "options": [
+      "DNA only",
+      "RNA only",
+      "Antigen-antibody reaction",
+      "Bacterial spores"
+    ],
+    "answer": "Antigen-antibody reaction"
+  },
+  {
+    "question": "A hapten is defined as a substance that:",
+    "options": [
+      "Can induce antibody production alone",
+      "Cannot induce immune response unless attached to a carrier",
+      "Destroys antibodies",
+      "Acts as a vaccine"
+    ],
+    "answer": "Cannot induce immune response unless attached to a carrier"
+  },
+  {
+    "question": "The vaccine given at birth in Nepal to prevent tuberculosis is:",
+    "options": ["OPV", "BCG", "DPT", "MMR"],
+    "answer": "BCG"
+  },
+  {
+    "question": "The Mantoux test is used for the diagnosis of:",
+    "options": ["Typhoid", "Tuberculosis infection", "Syphilis", "Brucellosis"],
+    "answer": "Tuberculosis infection"
+  },
+  {
+    "question": "C-Reactive Protein (CRP) is commonly elevated in:",
+    "options": [
+      "Inflammatory conditions",
+      "Blood grouping",
+      "Hemophilia",
+      "Malaria only"
+    ],
+    "answer": "Inflammatory conditions"
+  },
+
+  {
+    "question": "The primary purpose of fixation in histopathology is to:",
+    "options": [
+      "Stain the tissue",
+      "Preserve tissue structure and prevent autolysis",
+      "Increase tissue size",
+      "Remove calcium salts"
+    ],
+    "answer": "Preserve tissue structure and prevent autolysis"
+  },
+  {
+    "question": "The concentration of formaldehyde in 10% formalin is approximately:",
+    "options": ["4%", "10%", "20%", "40%"],
+    "answer": "4%"
+  },
+  {
+    "question": "Which staining method is commonly used to demonstrate glycogen in tissue sections?",
+    "options": ["Congo Red stain", "PAS stain", "Gram stain", "Giemsa stain"],
+    "answer": "PAS stain"
+  },
+  {
+    "question": "The blue color in Hematoxylin and Eosin staining is mainly produced by:",
+    "options": ["Eosin", "Hematoxylin", "Xylene", "Alcohol"],
+    "answer": "Hematoxylin"
+  },
+  {
+    "question": "The purpose of dehydration during tissue processing is to remove:",
+    "options": ["Protein", "Calcium", "Water", "Fat"],
+    "answer": "Water"
+  },
+  {
+    "question": "The usual thickness of paraffin sections for routine histopathology is:",
+    "options": ["1-2 µm", "3-5 µm", "15-20 µm", "25-30 µm"],
+    "answer": "3-5 µm"
+  },
+  {
+    "question": "Which mounting medium is most commonly used for permanent histological slides?",
+    "options": ["Normal saline", "Glycerine", "DPX", "Formalin"],
+    "answer": "DPX"
+  },
+  {
+    "question": "Fine Needle Aspiration Cytology (FNAC) is primarily used for:",
+    "options": [
+      "Blood grouping",
+      "Collection of tissue cells for cytological diagnosis",
+      "Urine analysis",
+      "Bacterial culture"
+    ],
+    "answer": "Collection of tissue cells for cytological diagnosis"
+  },
+  {
+    "question": "Papanicolaou stain is routinely used for examination of:",
+    "options": [
+      "Bone marrow smear",
+      "Peripheral blood smear",
+      "Cervical smear",
+      "Bacterial smear"
+    ],
+    "answer": "Cervical smear"
+  },
+  {
+    "question": "Congo Red stain is specifically used for demonstration of:",
+    "options": ["Glycogen", "Amyloid", "Acid-fast bacilli", "Mucin"],
+    "answer": "Amyloid"
+  },
+
+  {
+    "question": "The normal resting pulse rate in a healthy adult is:",
+    "options": [
+      "20–40 beats/minute",
+      "40–60 beats/minute",
+      "60–100 beats/minute",
+      "120–160 beats/minute"
+    ],
+    "answer": "60–100 beats/minute"
+  },
+  {
+    "question": "Which chamber of the heart has the thickest muscular wall?",
+    "options": [
+      "Right atrium",
+      "Left atrium",
+      "Right ventricle",
+      "Left ventricle"
+    ],
+    "answer": "Left ventricle"
+  },
+  {
+    "question": "The functional unit of the kidney is:",
+    "options": ["Alveolus", "Neuron", "Nephron", "Osteon"],
+    "answer": "Nephron"
+  },
+  {
+    "question": "Normal adult respiratory rate at rest is:",
+    "options": [
+      "5–10 breaths/minute",
+      "12–20 breaths/minute",
+      "25–35 breaths/minute",
+      "40–50 breaths/minute"
+    ],
+    "answer": "12–20 breaths/minute"
+  },
+  {
+    "question": "Which hormone is secreted by the pancreas to lower blood glucose levels?",
+    "options": ["Glucagon", "Insulin", "Thyroxine", "Cortisol"],
+    "answer": "Insulin"
+  },
+  {
+    "question": "The largest gland in the human body is:",
+    "options": ["Pancreas", "Thyroid", "Liver", "Pituitary gland"],
+    "answer": "Liver"
+  },
+  {
+    "question": "Exchange of oxygen and carbon dioxide in the lungs occurs in the:",
+    "options": ["Bronchi", "Trachea", "Alveoli", "Pleura"],
+    "answer": "Alveoli"
+  },
+  {
+    "question": "The normal pH range of arterial blood is:",
+    "options": ["6.8–7.0", "7.35–7.45", "7.8–8.0", "8.1–8.5"],
+    "answer": "7.35–7.45"
+  },
+  {
+    "question": "Which part of the alimentary canal is the major site of nutrient absorption?",
+    "options": ["Stomach", "Esophagus", "Small intestine", "Large intestine"],
+    "answer": "Small intestine"
+  },
+  {
+    "question": "The average total blood volume in a healthy adult is approximately:",
+    "options": ["1 liter", "3 liters", "5 liters", "8 liters"],
+    "answer": "5 liters"
+  },
+
+  {
+    "question": "The infective stage of Entamoeba histolytica for humans is:",
+    "options": [
+      "Trophozoite",
+      "Quadrinucleate cyst",
+      "Merozoite",
+      "Sporozoite"
+    ],
+    "answer": "Quadrinucleate cyst"
+  },
+  {
+    "question": "The diagnostic stage of Wuchereria bancrofti commonly detected in peripheral blood is:",
+    "options": ["Adult worm", "Egg", "Microfilaria", "Cercaria"],
+    "answer": "Microfilaria"
+  },
+  {
+    "question": "The concentration method that uses 33% zinc sulphate solution is called:",
+    "options": [
+      "Sedimentation method",
+      "Floatation method",
+      "Direct smear method",
+      "Stoll's dilution method"
+    ],
+    "answer": "Floatation method"
+  },
+  {
+    "question": "The characteristic barrel-shaped egg with bipolar plugs is seen in:",
+    "options": [
+      "Ascaris lumbricoides",
+      "Trichuris trichiura",
+      "Enterobius vermicularis",
+      "Hookworm"
+    ],
+    "answer": "Trichuris trichiura"
+  },
+  {
+    "question": "Bence-Jones protein in urine is most commonly associated with:",
+    "options": [
+      "Diabetes mellitus",
+      "Nephrotic syndrome",
+      "Multiple myeloma",
+      "Acute cystitis"
+    ],
+    "answer": "Multiple myeloma"
+  },
+
+  {
+    "question": "Which type of automated analyzer processes each specimen in separate reaction cuvettes?",
+    "options": [
+      "Continuous flow analyzer",
+      "Discrete analyzer",
+      "Flame photometer",
+      "Colorimeter"
+    ],
+    "answer": "Discrete analyzer"
+  },
+  {
+    "question": "The instrument commonly used for automated counting of RBCs, WBCs and platelets is:",
+    "options": [
+      "Blood cell analyzer",
+      "Spectrophotometer",
+      "Water bath",
+      "pH meter"
+    ],
+    "answer": "Blood cell analyzer"
+  },
+  {
+    "question": "The primary function of an ELISA washer is to:",
+    "options": [
+      "Measure absorbance",
+      "Incubate samples",
+      "Remove unbound reagents from wells",
+      "Centrifuge serum samples"
+    ],
+    "answer": "Remove unbound reagents from wells"
+  },
+  {
+    "question": "Automated blood gas analyzers are mainly used to measure:",
+    "options": [
+      "Blood glucose and cholesterol",
+      "pH, pCO₂ and pO₂",
+      "Hemoglobin and ESR",
+      "Sodium and potassium only"
+    ],
+    "answer": "pH, pCO₂ and pO₂"
+  },
+  {
+    "question": "Routine maintenance of laboratory instruments is important primarily to ensure:",
+    "options": [
+      "Higher electricity consumption",
+      "Accurate and reliable test results",
+      "Increased sample volume",
+      "Reduced staff requirements"
+    ],
+    "answer": "Accurate and reliable test results"
+  },
+
+  {
+    "question": "Which blood group is known as the universal recipient in the ABO blood group system?",
+    "options": ["O negative", "O positive", "AB positive", "AB negative"],
+    "answer": "AB positive"
+  },
+  {
+    "question": "The Direct Coombs test is primarily used to detect:",
+    "options": [
+      "Free antibodies in serum",
+      "Antibodies attached to red blood cells in vivo",
+      "Blood glucose levels",
+      "Platelet antibodies only"
+    ],
+    "answer": "Antibodies attached to red blood cells in vivo"
+  },
+  {
+    "question": "The main purpose of cross-matching before blood transfusion is to:",
+    "options": [
+      "Determine hemoglobin concentration",
+      "Ensure compatibility between donor and recipient blood",
+      "Measure clotting time",
+      "Estimate platelet count"
+    ],
+    "answer": "Ensure compatibility between donor and recipient blood"
+  },
+  {
+    "question": "Erythroblastosis fetalis most commonly occurs due to:",
+    "options": [
+      "ABO incompatibility",
+      "Rh incompatibility",
+      "Platelet incompatibility",
+      "Leukocyte incompatibility"
+    ],
+    "answer": "Rh incompatibility"
+  },
+  {
+    "question": "Blood collected in CPDA-1 blood bags can be stored for up to:",
+    "options": ["21 days", "35 days", "42 days", "60 days"],
+    "answer": "35 days"
+  },
+
+  {
+    "question": "Which type of cell adaptation is characterized by an increase in the size of individual cells resulting in enlargement of an organ?",
+    "options": ["Hyperplasia", "Metaplasia", "Hypertrophy", "Atrophy"],
+    "answer": "Hypertrophy"
+  },
+  {
+    "question": "Necrosis is best defined as:",
+    "options": [
+      "Programmed cell death",
+      "Physiological cell death",
+      "Pathological death of cells in living tissue",
+      "Cell division without growth"
+    ],
+    "answer": "Pathological death of cells in living tissue"
+  },
+  {
+    "question": "The fluid that accumulates due to inflammation and contains high protein content is called:",
+    "options": ["Transudate", "Exudate", "Serum", "Lymph"],
+    "answer": "Exudate"
+  },
+  {
+    "question": "A malignant tumor arising from epithelial tissue is known as:",
+    "options": ["Sarcoma", "Lymphoma", "Carcinoma", "Adenoma"],
+    "answer": "Carcinoma"
+  },
+  {
+    "question": "Alpha-fetoprotein (AFP) is commonly used as a tumor marker for:",
+    "options": [
+      "Prostate carcinoma",
+      "Hepatocellular carcinoma",
+      "Ovarian carcinoma",
+      "Thyroid carcinoma"
+    ],
+    "answer": "Hepatocellular carcinoma"
+  }
+]
